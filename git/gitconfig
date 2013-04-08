@@ -1,0 +1,5 @@
+[user]
+	name = John Else
+	email = john.else@citrix.com
+[core]
+	excludesfile = ~/.gitignore_global
