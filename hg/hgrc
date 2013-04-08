@@ -1,0 +1,19 @@
+[ui]
+username = John Else <john.else@citrix.com>
+ignore = ~/.hgignore
+
+[diff]
+nodates = 1
+
+[extensions]
+hgk =
+mq =
+rebase =
+hgext.crecord = /home/johnel/.hgext/crecord
+
+[pager]
+pager=less
+
+[format]
+dotencode=0
+usefncache = False

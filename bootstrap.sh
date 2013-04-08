@@ -4,12 +4,16 @@
 FILE_PATHS=(
     "$HOME/.dotfiles/git/gitconfig"
     "$HOME/.dotfiles/git/gitignore_global"
+    "$HOME/.dotfiles/hg/hgrc"
+    "$HOME/.dotfiles/hg/hgignore"
 )
 
 # Paths at which we want to create symlinks to the config files
 LINK_PATHS=(
     "$HOME/.gitconfig"
     "$HOME/.gitignore_global"
+    "$HOME/.hgrc"
+    "$HOME/.hgignore"
 )
 
 function create_link() {
