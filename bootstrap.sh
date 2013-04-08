@@ -31,7 +31,7 @@ function create_link() {
 }
 
 if [ "$PWD" != "$HOME/.dotfiles" ]; then
-    echo "Please execute bootstap.sh from .dotfiles directory in $HOME"
+    echo "Please execute bootstrap.sh from .dotfiles directory in $HOME"
     exit 1
 else
     # Create $HOME/bin if it doesn't exist,
