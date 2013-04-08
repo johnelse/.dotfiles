@@ -30,9 +30,6 @@ if [ "$PWD" != "$HOME/.dotfiles" ]; then
     echo "Please execute bootstap.sh from .dotfiles directory in $HOME"
     exit 1
 else
-    # Check we're up to date
-    git pull
-
     # Assumes both arrays are the same length!
     for ((i = 0; i < ${#FILE_PATHS[@]}; i++))
     do
