@@ -6,6 +6,8 @@ FILE_PATHS=(
     "$HOME/.dotfiles/git/gitignore_global"
     "$HOME/.dotfiles/hg/hgrc"
     "$HOME/.dotfiles/hg/hgignore"
+    "$HOME/.dotfiles/tmux/tmux.conf"
+    "$HOME/.dotfiles/tmux/tmux-start"
 )
 
 # Paths at which we want to create symlinks to the config files
@@ -14,6 +16,8 @@ LINK_PATHS=(
     "$HOME/.gitignore_global"
     "$HOME/.hgrc"
     "$HOME/.hgignore"
+    "$HOME/.tmux.conf"
+    "$HOME/bin/tmux-start"
 )
 
 function create_link() {
@@ -30,6 +34,17 @@ if [ "$PWD" != "$HOME/.dotfiles" ]; then
     echo "Please execute bootstap.sh from .dotfiles directory in $HOME"
     exit 1
 else
+    # Create $HOME/bin if it doesn't exist,
+    # or fail if it exists and is not a directory.
+    if [ -e "$HOME/bin" ]; then
+        if [ ! -d "$HOME/bin" ]; then
+            echo "\$HOME/bin exists and is not a directory!"
+            exit 1
+        fi
+    else
+        mkdir -p "$HOME/bin"
+    fi
+
     # Create the symlinks - assumes both arrays are the same length!
     for ((i = 0; i < ${#FILE_PATHS[@]}; i++))
     do
