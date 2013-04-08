@@ -30,7 +30,7 @@ if [ "$PWD" != "$HOME/.dotfiles" ]; then
     echo "Please execute bootstap.sh from .dotfiles directory in $HOME"
     exit 1
 else
-    # Assumes both arrays are the same length!
+    # Create the symlinks - assumes both arrays are the same length!
     for ((i = 0; i < ${#FILE_PATHS[@]}; i++))
     do
         create_link ${FILE_PATHS[$i]} ${LINK_PATHS[$i]}
