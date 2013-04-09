@@ -3,6 +3,7 @@
 # We want to ensure these directories exist
 DIRS=(
     "$HOME/bin"
+    "$HOME/.xmonad"
 )
 
 # Config files within the repository
@@ -13,6 +14,7 @@ FILE_PATHS=(
     "$HOME/.dotfiles/hg/hgignore"
     "$HOME/.dotfiles/tmux/tmux.conf"
     "$HOME/.dotfiles/tmux/tmux-start"
+    "$HOME/.dotfiles/xmonad/xmonad.hs"
 )
 
 # Paths at which we want to create symlinks to the config files
@@ -23,6 +25,7 @@ LINK_PATHS=(
     "$HOME/.hgignore"
     "$HOME/.tmux.conf"
     "$HOME/bin/tmux-start"
+    "$HOME/.xmonad/xmonad.hs"
 )
 
 function create_dir() {
