@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# We want to ensure these directories exist
+DIRS=(
+    "$HOME/bin"
+)
+
 # Config files within the repository
 FILE_PATHS=(
     "$HOME/.dotfiles/git/gitconfig"
@@ -20,6 +25,21 @@ LINK_PATHS=(
     "$HOME/bin/tmux-start"
 )
 
+function create_dir() {
+    DIR_PATH=$1
+
+    # Create directory if it doesn't exist,
+    # or fail if it exists and is not a directory.
+    if [ -e "$DIR_PATH" ]; then
+        if [ ! -d "$DIR_PATH" ]; then
+            echo "${DIR_PATH} exists and is not a directory!"
+            exit 1
+        fi
+    else
+        mkdir -pv $DIR_PATH
+    fi
+}
+
 function create_link() {
     FILE_PATH=$1
     LINK_PATH=$2
@@ -34,16 +54,11 @@ if [ "$PWD" != "$HOME/.dotfiles" ]; then
     echo "Please execute bootstrap.sh from .dotfiles directory in $HOME"
     exit 1
 else
-    # Create $HOME/bin if it doesn't exist,
-    # or fail if it exists and is not a directory.
-    if [ -e "$HOME/bin" ]; then
-        if [ ! -d "$HOME/bin" ]; then
-            echo "\$HOME/bin exists and is not a directory!"
-            exit 1
-        fi
-    else
-        mkdir -p "$HOME/bin"
-    fi
+    # Create any directories which don't exist.
+    for DIR in ${DIRS[@]}; do
+        echo $DIR
+        create_dir $DIR
+    done
 
     # Create the symlinks - assumes both arrays are the same length!
     for ((i = 0; i < ${#FILE_PATHS[@]}; i++))
