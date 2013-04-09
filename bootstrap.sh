@@ -64,8 +64,7 @@ else
     done
 
     # Create the symlinks - assumes both arrays are the same length!
-    for ((i = 0; i < ${#FILE_PATHS[@]}; i++))
-    do
+    for ((i = 0; i < ${#FILE_PATHS[@]}; i++)); do
         create_link ${FILE_PATHS[$i]} ${LINK_PATHS[$i]}
     done
 
