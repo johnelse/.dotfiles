@@ -10,7 +10,7 @@ tmux new-window -t xapi:4 -n 'xapi-git'
 tmux new-window -t xapi:5 -n 'libs'
 tmux new-window -t xapi:6 -n 'libs-git'
 
-tmux send-keys -t xapi:0 'cd Notes; vim ea-1034' C-m
+tmux send-keys -t xapi:0 'cd Notes; vim todo' C-m
 tmux send-keys -t xapi:1 'irc' C-m
 tmux send-keys -t xapi:1 '/join #ring3' C-m
 tmux send-keys -t xapi:2 'cd $RING3; make api-chroot' C-m
