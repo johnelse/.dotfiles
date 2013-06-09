@@ -1,0 +1,31 @@
+execute pathogen#infect()
+
+syntax on
+filetype plugin indent on
+au FileType ocaml setl sw=2 sts=2 ts=2 tw=0 wrapmargin=0 noexpandtab
+au FileType javascript setl sw=2 sts=2 ts=2 tw=0 wrapmargin=0 expandtab
+au FileType python setl sw=4 sts=4 ts=4 expandtab
+au FileType ruby setl sw=4 sts=4 ts=4 expandtab
+au FileType sh setl sw=4 sts=4 ts=4 expandtab
+au FileType html setl sw=4 sts=4 ts=4 expandtab
+au FileType vim setl sw=4 sts=4 ts=4 expandtab
+
+colorscheme desert
+
+map <C-l> :NERDTreeFind<CR>
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.swp$', '\.a$', '\.cmxa$', '\.o$', '\.spit$', '\.spot$', '\.cmi$', '\.cmx$', '\.annot$']
+
+set statusline=%t%m%r%h%w\ \ \ [BUF=%02n]\ \ \ [TYPE=%Y]\ \ \ [POS=%03l,%03c(%03v)][%03p%%]\ \ \ [LEN=%L]
+set laststatus=2
+
+set colorcolumn=80
+
+set hls
+set incsearch
+set list
+set listchars=tab:.─,trail:∘,eol:$
+"set listchars=tab:┼─,trail:∘
+
+set wildmode=longest:full
+set wildmenu
