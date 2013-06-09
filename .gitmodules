@@ -7,3 +7,6 @@
 [submodule "vim/vim/bundle/ocamlspot-helpers"]
 	path = vim/vim/bundle/ocamlspot-helpers
 	url = git://github.com/johnelse/ocamlspot-helpers.git
+[submodule "vim/vim/bundle/vim-xensource-log"]
+	path = vim/vim/bundle/vim-xensource-log
+	url = git://github.com/johnelse/vim-xensource-log
