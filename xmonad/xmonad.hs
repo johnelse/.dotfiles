@@ -10,9 +10,6 @@ myManageHook = composeAll [
 		-- Hide GNOME Do.
 		resource =? "Do" --> doIgnore,
 		className =? "Xfce4-notifyd" --> (doF W.focusDown <+> doFloat),
-		-- These are made unnecessary by manageDocks.
-		-- resource =? "desktop-window" --> doIgnore,
-		-- resource =? "gnome-panel" --> doIgnore,
 		manageDocks
 	]
 
