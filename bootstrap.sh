@@ -15,6 +15,8 @@ FILE_PATHS=(
     "$HOME/.dotfiles/screen/screenrc"
     "$HOME/.dotfiles/tmux/tmux.conf"
     "$HOME/.dotfiles/tmux/tmux-start"
+    "$HOME/.dotfiles/vim/vimrc"
+    "$HOME/.dotfiles/vim/vim"
     "$HOME/.dotfiles/xmonad/xmonad.hs"
 )
 
@@ -27,6 +29,8 @@ LINK_PATHS=(
     "$HOME/.screenrc"
     "$HOME/.tmux.conf"
     "$HOME/bin/tmux-start"
+    "$HOME/.vimrc"
+    "$HOME/.vim"
     "$HOME/.xmonad/xmonad.hs"
 )
 
