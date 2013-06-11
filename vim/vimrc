@@ -19,7 +19,9 @@ let NERDTreeIgnore=['\.swp$', '\.a$', '\.cmxa$', '\.o$', '\.spit$', '\.spot$', '
 set statusline=%t%m%r%h%w\ \ \ [BUF=%02n]\ \ \ [TYPE=%Y]\ \ \ [POS=%03l,%03c(%03v)][%03p%%]\ \ \ [LEN=%L]
 set laststatus=2
 
-set colorcolumn=80
+if exists("&colorcolumn")
+    set colorcolumn=80
+endif
 
 set hls
 set incsearch
