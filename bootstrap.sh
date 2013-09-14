@@ -8,6 +8,8 @@ DIRS=(
 
 # Config files within the repository
 FILE_PATHS=(
+    "$HOME/.dotfiles/bash/bashrc"
+    "$HOME/.dotfiles/bash/bash"
     "$HOME/.dotfiles/git/gitconfig"
     "$HOME/.dotfiles/git/gitignore_global"
     "$HOME/.dotfiles/hg/hgrc"
@@ -22,6 +24,8 @@ FILE_PATHS=(
 
 # Paths at which we want to create symlinks to the config files
 LINK_PATHS=(
+    "$HOME/.bashrc"
+    "$HOME/.bash"
     "$HOME/.gitconfig"
     "$HOME/.gitignore_global"
     "$HOME/.hgrc"
