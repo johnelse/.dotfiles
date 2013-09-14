@@ -34,3 +34,20 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Building XenServer
 export CLEAN_AFTER_BUILD=no
+
+# Prompt
+# http://lukasrieder.com/2009/07/14/extend-your-bash-ps1.html
+function parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
+}
+PS1="\[\e[0;32;49m\]\u@\h:\W\[\e[0;33;49m\]\$(parse_git_branch)\[\e[0;31;49m\]$\[\e[0;0m\] "
+
+# Path
+PATH=$PATH:/usr/groups/xencore/systems/bin
+PATH=$PATH:/usr/groups/xenrt/production/share/control
+PATH=$PATH:~/Scripts/johnel
+PATH=$PATH:$CARBON2/trunk-ring3/support.hg/bugget
+PATH=$PATH:$LOC/bin
+PATH=$PATH:~/bin
+PATH=$PATH:/usr/local/installed/ocaml/bin
+PATH=$PATH:/usr/local/installed/opam/bin
