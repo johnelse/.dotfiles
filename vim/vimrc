@@ -34,6 +34,6 @@ set wildmenu
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
 " NERDTree bits.
-map <C-l> :NERDTreeFind<CR>
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-l> :NERDTreeFind<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.swp$', '\.a$', '\.cmxa$', '\.o$', '\.spit$', '\.spot$', '\.cmi$', '\.cmx$', '\.annot$']
