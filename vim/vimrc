@@ -1,5 +1,7 @@
 execute pathogen#infect()
 
+au BufRead,BufNewFile *xensource.log* set filetype=messages
+
 syntax on
 filetype plugin indent on
 au FileType ocaml setl sw=2 sts=2 ts=2 tw=0 wrapmargin=0 noexpandtab
