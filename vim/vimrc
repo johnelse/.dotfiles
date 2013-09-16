@@ -33,3 +33,6 @@ set listchars=tab:.─,trail:∘,eol:$
 
 set wildmode=longest:full
 set wildmenu
+
+" Edit .vimrc easily.
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
