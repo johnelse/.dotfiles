@@ -14,10 +14,6 @@ au FileType vim setl sw=4 sts=4 ts=4 expandtab
 
 colorscheme desert
 
-map <C-l> :NERDTreeFind<CR>
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.swp$', '\.a$', '\.cmxa$', '\.o$', '\.spit$', '\.spot$', '\.cmi$', '\.cmx$', '\.annot$']
-
 set statusline=%t%m%r%h%w\ \ \ [BUF=%02n]\ \ \ [TYPE=%Y]\ \ \ [POS=%03l,%03c(%03v)][%03p%%]\ \ \ [LEN=%L]
 set laststatus=2
 
@@ -36,3 +32,8 @@ set wildmenu
 
 " Edit .vimrc easily.
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" NERDTree bits.
+map <C-l> :NERDTreeFind<CR>
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.swp$', '\.a$', '\.cmxa$', '\.o$', '\.spit$', '\.spot$', '\.cmi$', '\.cmx$', '\.annot$']
