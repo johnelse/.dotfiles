@@ -12,7 +12,6 @@ alias fn='find . -name'
 alias na='grep -v autogen'
 
 # ocaml
-alias ocaml='rlwrap -cr ocaml'
 ####################################################################################
 #
 # see: http://tech.groups.yahoo.com/group/ocaml_beginners/message/2929
