@@ -15,6 +15,7 @@ au FileType ruby setl sw=4 sts=4 ts=4 expandtab
 au FileType sh setl sw=4 sts=4 ts=4 expandtab
 au FileType html setl sw=4 sts=4 ts=4 expandtab
 au FileType vim setl sw=4 sts=4 ts=4 expandtab
+au FileType c setl sw=4 sts=4 ts=4 expandtab
 
 " Visual settings.
 colorscheme desert
