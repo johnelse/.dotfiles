@@ -1,0 +1,37 @@
+#!/bin/bash
+
+function notify() {
+    NOW_PLAYING=`spotify-cli now-playing`
+    notify-send "${NOW_PLAYING}"
+}
+
+function next() {
+    spotify-cli next
+}
+
+function play-pause() {
+    spotify-cli play-pause
+}
+
+function previous() {
+    spotify-cli previous
+}
+
+case "$1" in
+    notify)
+        notify
+        ;;
+    next)
+        next
+        notify
+        ;;
+    play-pause)
+        play-pause
+        ;;
+    previous)
+        previous
+        notify
+        ;;
+    *)
+        exit 1
+esac
