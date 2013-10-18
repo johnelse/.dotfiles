@@ -51,3 +51,5 @@ alias less='less -R'
 alias gl='git log --graph --abbrev-commit --pretty=oneline --decorate'
 # "open <filename>" uses the default application for <filename>
 alias open='xdg-open'
+
+alias todo='vim ~/Dropbox/todo/data/todo.txt'
