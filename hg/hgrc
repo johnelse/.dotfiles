@@ -8,6 +8,7 @@ nodates = 1
 [extensions]
 hgk =
 mq =
+pager =
 rebase =
 hgext.crecord = /home/johnel/.hgext/crecord
 
