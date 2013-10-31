@@ -13,6 +13,10 @@ function cdi() {
 }
 
 # Laziness.
+function nvidia() {
+  cd $ISSUES/NVIDIA-$@
+}
+
 function sctx() {
   cd $ISSUES/SCTX-$@
 }
