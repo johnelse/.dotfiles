@@ -13,6 +13,10 @@ function cdi() {
 }
 
 # Laziness.
+function ca() {
+  cd $ISSUES/bug-CA-$@
+}
+
 function nvidia() {
   cd $ISSUES/bug-NVIDIA-$@
 }
@@ -25,8 +29,29 @@ function xop() {
   cd $ISSUES/bug-XOP-$@
 }
 
-function ca() {
-  cd $ISSUES/bug-CA-$@
+# Download all files for the given ticket.
+function get_ticket() {
+  TICKET_TYPE=$1
+  TICKET_NUMBER=$2
+  cd $ISSUES
+  bugget.py ${TICKET_TYPE}-${TICKET_NUMBER}
+  ${TICKET_TYPE,,} ${TICKET_NUMBER}
+}
+
+function ca_ticket() {
+  get_ticket CA $1
+}
+
+function nvidia_ticket() {
+  get_ticket NVIDIA $1
+}
+
+function sctx_ticket() {
+  get_ticket SCTX $1
+}
+
+function xop_ticket() {
+  get_ticket XOP $1
 }
 
 function code() {
@@ -35,15 +60,6 @@ function code() {
 
 function ctime() {
   python -c "import time; print time.ctime(${1})"
-}
-
-# Download and extract all the files for the given CA ticket.
-function ca_ticket() {
-  TICKET_NUMBER=$@
-  cd $ISSUES
-  bugget.py CA-$TICKET_NUMBER
-  ca $TICKET_NUMBER
-  # uz *.tar.gz
 }
 
 function md5each() {
