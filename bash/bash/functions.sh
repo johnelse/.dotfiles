@@ -14,15 +14,15 @@ function cdi() {
 
 # Laziness.
 function nvidia() {
-  cd $ISSUES/NVIDIA-$@
+  cd $ISSUES/bug-NVIDIA-$@
 }
 
 function sctx() {
-  cd $ISSUES/SCTX-$@
+  cd $ISSUES/bug-SCTX-$@
 }
 
 function xop() {
-  cd $ISSUES/XOP-$@
+  cd $ISSUES/bug-XOP-$@
 }
 
 function ca() {
