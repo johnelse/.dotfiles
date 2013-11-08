@@ -13,6 +13,7 @@ au FileType javascript setl sw=4 sts=4 ts=4 tw=0 wrapmargin=0 expandtab
 au FileType python setl sw=4 sts=4 ts=4 expandtab
 au FileType ruby setl sw=4 sts=4 ts=4 expandtab
 au FileType sh setl sw=4 sts=4 ts=4 expandtab
+au FileType css setl sw=4 sts=4 ts=4 expandtab
 au FileType html setl sw=4 sts=4 ts=4 expandtab
 au FileType vim setl sw=4 sts=4 ts=4 expandtab
 au FileType c setl sw=4 sts=4 ts=4 expandtab
