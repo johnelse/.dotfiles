@@ -21,7 +21,9 @@ export RING3_CHROOT=$RING3/obj/chroot-dom0-env
 export RING3_API=$RING3/myrepos/xen-api
 export RING3_CODE=$RING3_API/ocaml
 
+export EA_1268=$CARBON2/trunk-ring3-ea1268/build.hg
 export PR_1061=$CARBON2/pr-1061/build.hg
+export PR_1675=$CARBON2/pr-1675/build.hg
 
 export PERF=$CARBON2/trunk-perf/build.hg
 
