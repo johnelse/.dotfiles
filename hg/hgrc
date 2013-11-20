@@ -11,6 +11,7 @@ mq =
 pager =
 rebase =
 hgext.crecord = /home/johnel/.hgext/crecord/crecord
+hgext.hgcollapse = /home/johnel/.hgext/hgcollapse/hgext/collapse.py
 
 [pager]
 pager=less
