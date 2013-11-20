@@ -10,7 +10,7 @@ hgk =
 mq =
 pager =
 rebase =
-hgext.crecord = /home/johnel/.hgext/crecord
+hgext.crecord = /home/johnel/.hgext/crecord/crecord
 
 [pager]
 pager=less
