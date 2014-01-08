@@ -75,7 +75,7 @@ function cifs_mount() {
   MOUNTPOINT=$2
   # Unmount if anything is already mounted.
   mountpoint -q $MOUNTPOINT && sudo umount $MOUNTPOINT
-  sudo mount.cifs $SHARE $MOUNTPOINT -o user=citrite\\johnel dom=citrite.net
+  sudo mount.cifs $SHARE $MOUNTPOINT -o user=johnel dom=citrite.net
 }
 
 function my_cifs_mount() {
