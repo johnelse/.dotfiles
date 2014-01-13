@@ -40,6 +40,9 @@ set incsearch
 set wildmode=longest:full
 set wildmenu
 
+" Turn off ex mode command, replace with simpler access to the q macro.
+map Q @q
+
 " Edit .vimrc easily.
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
