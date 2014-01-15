@@ -15,8 +15,8 @@ hgext.crecord = /home/johnel/.hgext/crecord/crecord
 hgext.hgcollapse = /home/johnel/.hgext/hgcollapse/hgext/collapse.py
 
 [pager]
-pager=less
+pager = less
 
 [format]
-dotencode=0
+dotencode = 0
 usefncache = False
