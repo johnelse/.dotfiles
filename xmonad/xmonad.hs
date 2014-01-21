@@ -1,7 +1,6 @@
 import XMonad
-import XMonad.Config.Xfce
-import XMonad.Hooks.ManageDocks
-import XMonad.Layout
+import XMonad.Config.Xfce (xfceConfig)
+import XMonad.Hooks.ManageDocks (manageDocks)
 import qualified XMonad.StackSet as W
 
 myManageHook :: ManageHook
