@@ -9,7 +9,7 @@ myManageHook = composeAll [
 		manageHook xfceConfig,
 		-- Hide GNOME Do.
 		resource =? "Do" --> doIgnore,
-		className =? "Xfce4-notifyd" --> (doF W.focusDown <+> doFloat),
+		className =? "Xfce4-notifyd" --> doIgnore,
 		manageDocks
 	]
 
