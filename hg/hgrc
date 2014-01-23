@@ -19,4 +19,4 @@ pager = less
 
 [format]
 dotencode = 0
-usefncache = False
+usefncache = 0
