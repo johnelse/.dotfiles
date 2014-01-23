@@ -25,12 +25,14 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm ]
                 l = 1 - w
 
 myManageHook :: ManageHook
-myManageHook = (composeAll [ manageHook xfceConfig
-                           , resource =? "Do" --> doIgnore
-                           , className =? "Xfce4-notifyd" --> doIgnore
-                           , manageDocks
-                           ])
-               <+> namedScratchpadManageHook myScratchPads
+myManageHook = (composeAll $ concat
+                   [ [ manageHook xfceConfig]
+                   , [ className =? c --> doIgnore | c <- myIgnores ]
+                   , [ manageDocks ]
+                   , [ namedScratchpadManageHook myScratchPads ]
+                   ])
+    where
+        myIgnores = ["Do", "Xfce4-notifyd"]
 
 myKeys :: [(String, X ())]
 myKeys = [ ("M-p", namedScratchpadAction myScratchPads "terminal")
