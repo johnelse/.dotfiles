@@ -33,7 +33,11 @@ myManageHook = (composeAll [ manageHook xfceConfig
                <+> namedScratchpadManageHook myScratchPads
 
 myKeys :: [(String, X ())]
-myKeys = [ ("M-p", namedScratchpadAction myScratchPads "terminal") ]
+myKeys = [ ("M-p", namedScratchpadAction myScratchPads "terminal")
+         , ("M-S-y", spawn "spotify-cli-wrapper previous")
+         , ("M-S-u", spawn "spotify-cli-wrapper play-pause")
+         , ("M-S-i", spawn "spotify-cli-wrapper notify")
+         , ("M-S-o", spawn "spotify-cli-wrapper next") ]
 
 myConfig = xfceConfig { manageHook = myManageHook
                       , terminal = myTerminal
