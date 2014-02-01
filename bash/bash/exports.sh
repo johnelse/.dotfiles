@@ -51,5 +51,4 @@ PATH=$PATH:~/Scripts/johnel
 PATH=$PATH:$CARBON2/trunk-ring3/support.hg/bugget
 PATH=$PATH:$LOC/bin
 PATH=$PATH:~/bin
-PATH=$PATH:/usr/local/installed/ocaml/bin
 PATH=$PATH:/usr/local/installed/opam/bin
