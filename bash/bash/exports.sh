@@ -10,6 +10,7 @@ export BOSTON_LCM=$CARBON/boston-lcm/build.hg
 export SANIBEL_LCM=$CARBON/sanibel-lcm/build.hg
 export TAMPA_LCM=$CARBON/tampa-lcm/build.hg
 export CLEARWATER_LCM=$CARBON/clearwater-lcm/build.hg
+export CLEARWATER_SP1_LCM=$CARBON/clearwater-sp1-lcm/build.hg
 
 export RING3=$CARBON/trunk-ring3/build.hg
 export RING3_CHROOT=$RING3/obj/chroot-dom0-env
