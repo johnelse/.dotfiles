@@ -96,3 +96,17 @@ function get_logs() {
   mkdir $NEWDIR
   scp root@${HOST}:/var/log/* $NEWDIR
 }
+
+function update_xapi_on() {
+  if [ $(basename $(pwd)) != "build.hg" ]
+  then
+    echo "Error: not in build.hg"
+    return 1
+  else
+    HOST=$1
+    XAPI_RPM=`find output/api/RPMS/i686 -name xapi-core-*`
+    scp $XAPI_RPM root@${HOST}:
+    ssh root@${HOST} "rpm -U $(basename ${XAPI_RPM}) --force"
+    ssh root@${HOST} "service xapi restart"
+  fi
+}
