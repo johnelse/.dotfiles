@@ -4,9 +4,6 @@
 [submodule "vim/vim/bundle/nerdtree"]
 	path = vim/vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim/vim/bundle/ocamlspot-helpers"]
-	path = vim/vim/bundle/ocamlspot-helpers
-	url = git://github.com/johnelse/ocamlspot-helpers.git
 [submodule "vim/vim/bundle/vim-matchit"]
 	path = vim/vim/bundle/vim-matchit
 	url = git://github.com/tsaleh/vim-matchit.git
