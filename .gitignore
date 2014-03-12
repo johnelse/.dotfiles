@@ -1,2 +1,5 @@
 irssi/away.log
 irssi/config.autosave
+
+vim/vim/bundle/*
+~vim/vim/bundle/neobundle.vim
