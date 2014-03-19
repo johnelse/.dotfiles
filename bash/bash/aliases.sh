@@ -52,4 +52,8 @@ alias gl='git log --graph --abbrev-commit --pretty=oneline --decorate'
 # "open <filename>" uses the default application for <filename>
 alias open='xdg-open'
 
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
 alias todo='vim ~/Dropbox/todo/data/todo.txt'
