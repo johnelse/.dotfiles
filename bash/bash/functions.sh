@@ -2,6 +2,10 @@ function grml() {
   find . -regex .*\\.mli? | xargs grep -Hn --color=always "$@"
 }
 
+function grj() {
+  find . -name *.java | xargs grep -Hn --color=always "$@"
+}
+
 function where() {
   grep -rlI "$@" .
 }
