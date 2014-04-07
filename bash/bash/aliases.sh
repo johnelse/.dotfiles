@@ -30,7 +30,7 @@ alias na='grep -v autogen'
 alias ocamlthread='rlwrap -cr ocamlthread -I +threads'
 
 # rdesktop
-alias adserver='rdesktop 10.80.237.222 -a 16 -k en-gb -K -x 80 -d TEST -u Administrator'
+alias adserver='rdesktop 10.80.237.237 -a 16 -k en-gb -K -x 80 -d TEST -u Administrator'
 alias adserver_small='adserver -g 1024x600'
 alias adserver_med='adserver -g 1366x768'
 alias adserver_large='adserver -g 1680x1050'
