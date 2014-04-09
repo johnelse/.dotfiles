@@ -32,6 +32,7 @@ au FileType vim setl sw=4 sts=4 ts=4 expandtab
 au FileType c setl sw=4 sts=4 ts=4 expandtab
 au FileType erlang setl sw=4 sts=4 ts=4 expandtab
 au FileType haskell setl sw=4 sts=4 ts=4 expandtab
+au FileType cucumber setl sw=4 sts=4 ts=4 expandtab
 
 " Visual settings.
 colorscheme desert
