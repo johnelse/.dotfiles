@@ -44,7 +44,17 @@ alias irc='irssi -c FreeNode'
 
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
-alias ls='ls -G --color=always'
+
+case $(uname -s) in
+    Darwin)
+        alias ls='ls -G'
+        ;;
+    Linux)
+        alias ls='ls --color=always'
+        ;;
+    *)
+        ;;
+esac
 alias ll='ls -l'
 alias la='ls -a'
 alias less='less -R'
