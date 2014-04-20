@@ -6,6 +6,15 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
 
+###
+# Enable MacPorts bash completion, if applicable.
+if [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+fi
+if [ -f /opt/local/share/spotify-cli/spotify-cli ]; then
+    . /opt/local/share/spotify-cli/spotify-cli
+fi
+
 . $HOME/.bash/exports.sh
 . $HOME/.bash/aliases.sh
 . $HOME/.bash/functions.sh
