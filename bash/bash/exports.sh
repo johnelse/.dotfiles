@@ -40,11 +40,13 @@ function parse_git_branch() {
 }
 PS1="\[\e[0;32;49m\]\u@\h:\W\[\e[0;33;49m\]\$(parse_git_branch)\[\e[0;31;49m\]$\[\e[0;0m\] "
 
-# Path
-PATH=$PATH:/usr/groups/xencore/systems/bin
-PATH=$PATH:/usr/groups/xenrt/production/share/control
-PATH=$PATH:~/Scripts/johnel
-PATH=$PATH:$CARBON/trunk-ring3/support.hg/bugget
-PATH=$PATH:$LOC/bin
-PATH=$PATH:~/bin
-PATH=$PATH:/usr/local/installed/opam/bin
+# Path - only add to the path outside tmux.
+if [ -z "$TMUX" ]; then
+    PATH=$PATH:/usr/groups/xencore/systems/bin
+    PATH=$PATH:/usr/groups/xenrt/production/share/control
+    PATH=$PATH:~/Scripts/johnel
+    PATH=$PATH:$CARBON/trunk-ring3/support.hg/bugget
+    PATH=$PATH:$LOC/bin
+    PATH=$PATH:~/bin
+    PATH=$PATH:/usr/local/installed/opam/bin
+fi
