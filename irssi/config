@@ -9,9 +9,7 @@ servers = (
   }
 );
 
-chatnets = {
-  FreeNode = { type = "IRC"; nick = "johnelse"; };
-};
+chatnets = { FreeNode = { type = "IRC"; nick = "johnelse"; }; };
 
 channels = (
   {
