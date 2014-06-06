@@ -75,7 +75,7 @@ function md5each() {
 
 # Mount windows shares.
 function cifs_mount() {
-  SHARE=$1
+  SHARE=$(echo $1 | sed -e 's/\\/\//g')
   MOUNTPOINT=$2
   # Unmount if anything is already mounted.
   mountpoint -q $MOUNTPOINT && sudo umount $MOUNTPOINT
