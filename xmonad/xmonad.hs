@@ -10,9 +10,9 @@ import XMonad.Util.NamedScratchpad ( NamedScratchpad(NS)
 import qualified XMonad.StackSet as W
 
 myTerminal = "xfce4-terminal --hide-menubar"
-myScratchPadTerminal = "urxvt +sb -bg Black -fg Gray -name scratchpad"
-myScratchPadIPython = "urxvt +sb -bg Black -fg Gray -name ipython -e ipython"
-myScratchPadUtop = "urxvt +sb -bg Black -fg Gray -name utop -e utop"
+myScratchPadTerminal = "urxvt +sb -bg Black -fg Gray -name xm-scratchpad"
+myScratchPadIPython = "urxvt +sb -bg Black -fg Gray -name xm-ipython -e ipython"
+myScratchPadUtop = "urxvt +sb -bg Black -fg Gray -name xm-utop -e utop"
 
 myScratchPads :: [NamedScratchpad]
 myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
@@ -20,7 +20,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                 , NS "utop" spawnUtop findUtop manageUtop]
     where
         spawnTerm  = myScratchPadTerminal
-        findTerm   = resource =? "scratchpad"
+        findTerm   = resource =? "xm-scratchpad"
         manageTerm = customFloating $ W.RationalRect l t w h
             where
                 h = 0.1
@@ -28,7 +28,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                 t = 1 - h
                 l = 1 - w
         spawnIPython  = myScratchPadIPython
-        findIPython   = resource =? "ipython"
+        findIPython   = resource =? "xm-ipython"
         manageIPython = customFloating $ W.RationalRect l t w h
             where
                 h = 0.3
@@ -36,7 +36,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                 t = 0.0
                 l = 0.75
         spawnUtop  = myScratchPadUtop
-        findUtop   = resource =? "utop"
+        findUtop   = resource =? "xm-utop"
         manageUtop = customFloating $ W.RationalRect l t w h
             where
                 h = 0.3
