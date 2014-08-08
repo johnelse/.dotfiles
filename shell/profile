@@ -47,7 +47,6 @@ if [ -z "$TMUX" ]; then
   PATH=$PATH:~/Scripts/johnel
   PATH=$PATH:$CARBON/trunk-ring3/support.hg/bugget
   PATH=$PATH:$LOC/bin
-  PATH=$PATH:~/bin
   PATH=$PATH:/usr/local/installed/opam/bin
 fi
 
