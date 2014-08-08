@@ -8,8 +8,8 @@ DIRS=(
 
 # Config files within the repository
 FILE_PATHS=(
-    "$HOME/.dotfiles/bash/bashrc"
-    "$HOME/.dotfiles/bash/bash"
+    "$HOME/.dotfiles/shell/bashrc"
+    "$HOME/.dotfiles/shell/bash"
     "$HOME/.dotfiles/git/gitconfig"
     "$HOME/.dotfiles/git/gitignore_global"
     "$HOME/.dotfiles/hg/hgrc"
