@@ -38,8 +38,7 @@ function get_ticket() {
   TICKET_TYPE=$1
   TICKET_NUMBER=$2
   cd $ISSUES
-  bugget.py ${TICKET_TYPE}-${TICKET_NUMBER}
-  ${TICKET_TYPE,,} ${TICKET_NUMBER}
+  bugget.py ${TICKET_TYPE}-${TICKET_NUMBER} && ${TICKET_TYPE,,} ${TICKET_NUMBER}
 }
 
 function ca_ticket() {
