@@ -31,17 +31,17 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
         findIPython   = resource =? "ipython"
         manageIPython = customFloating $ W.RationalRect l t w h
             where
-                h = 0.1
-                w = 0.5
-                t = 0.1
-                l = 0.5
+                h = 0.3
+                w = 0.25
+                t = 0.0
+                l = 0.75
         spawnUtop  = myScratchPadUtop
         findUtop   = resource =? "utop"
         manageUtop = customFloating $ W.RationalRect l t w h
             where
-                h = 0.1
-                w = 0.5
-                t = 0
+                h = 0.3
+                w = 0.25
+                t = 0.0
                 l = 0.5
 
 myManageHook :: ManageHook
