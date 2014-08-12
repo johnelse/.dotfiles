@@ -31,7 +31,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
         findIPython   = resource =? "xm-ipython"
         manageIPython = customFloating $ W.RationalRect l t w h
             where
-                h = 0.3
+                h = 0.75
                 w = 0.25
                 t = 0.0
                 l = 0.75
@@ -39,7 +39,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
         findUtop   = resource =? "xm-utop"
         manageUtop = customFloating $ W.RationalRect l t w h
             where
-                h = 0.3
+                h = 0.75
                 w = 0.25
                 t = 0.0
                 l = 0.5
