@@ -22,6 +22,8 @@ export TAMPA_LCM=$CARBON/tampa-lcm/build.hg
 export CLEARWATER_LCM=$CARBON/clearwater-lcm/build.hg
 export CLEARWATER_SP1_LCM=$CARBON/clearwater-sp1-lcm/build.hg
 
+export CREEDENCE=$CARBON/creedence-ring3/build.hg
+
 export RING3=$CARBON/trunk-ring3/build.hg
 export RING3_CHROOT=$RING3/obj/chroot-dom0-env
 export RING3_API=$RING3/myrepos/xen-api
