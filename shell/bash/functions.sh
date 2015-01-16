@@ -73,6 +73,8 @@ function md5each() {
 }
 
 # Mount windows shares.
+# CIFS path needs to be single quoted, e.g.
+# cifs_mount '\\host.citrite.net\foo\bar\' /mnt
 function cifs_mount() {
   SHARE=$(echo $1 | sed -e 's/\\/\//g')
   MOUNTPOINT=$2
