@@ -2,6 +2,10 @@
 alias a="spotify-cli play-album"
 alias t="spotify-cli play-track"
 
+# Hacks
+# xfce+xmonad doesn't start up properly...this seems to fix things.
+alias fixxmonad="xfce4-panel --restart"
+
 # Filesystem
 alias u='cd ..'
 alias uj='tar jxvf'
