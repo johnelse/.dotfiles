@@ -35,9 +35,10 @@ alias ocamlthread='rlwrap -cr ocamlthread -I +threads'
 
 # rdesktop
 alias adserver='rdesktop 10.80.237.237 -a 16 -k en-gb -K -x 80 -d TEST -u Administrator'
-alias adserver_small='adserver -g 1024x600'
-alias adserver_med='adserver -g 1366x768'
-alias adserver_large='adserver -g 1680x1050'
+alias adserver_1024='adserver -g 1024x600'
+alias adserver_1366='adserver -g 1366x768'
+alias adserver_1600='adserver -g 1600x900'
+alias adserver_1680='adserver -g 1680x1050'
 
 alias adserver_2k3='rdesktop 10.80.237.223 -K -g 1440x900'
 
