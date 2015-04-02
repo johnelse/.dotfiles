@@ -41,7 +41,7 @@ set statusline=%t%m%r%h%w\ \ \ [BUF=%02n]\ \ \ [TYPE=%Y]\ \ \ [POS=%03l,%03c(%03
 set laststatus=2
 
 if exists("&colorcolumn")
-    set colorcolumn=80
+    set colorcolumn=81
 endif
 
 set cursorline
