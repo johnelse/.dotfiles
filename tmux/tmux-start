@@ -18,10 +18,6 @@ tmux send-keys -t xapi:1 '/join #ring3' C-m
 tmux send-keys -t xapi:2 'cd $RING3; make api-chroot' C-m
 tmux send-keys -t xapi:3 'cd $RING3_API' C-m
 tmux send-keys -t xapi:4 'cd $RING3_API' C-m
-tmux send-keys -t xapi:5 'cd $RING3/myrepos/xen-api-libs' C-m
-tmux send-keys -t xapi:6 'cd $RING3/myrepos/xen-api-libs' C-m
-tmux send-keys -t xapi:7 'cd $RING3/myrepos/xen-4.5' C-m
-tmux send-keys -t xapi:8 'cd $RING3/myrepos/xen-4.5' C-m
 
 tmux select-window -t xapi:0
 tmux -2 attach-session -t xapi
