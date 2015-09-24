@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Script to create an index.html containing links to each file in a directory.
+
+if [ -a index.html ]
+then
+    echo "index.html already exists"
+    exit 1
+fi
+
+ITEMS=`ls --color=none`
+
+for ITEM in $ITEMS
+do
+    echo "<p><a href=\"$ITEM\">$ITEM</a></p>" >> index.html
+done
