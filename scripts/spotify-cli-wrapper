@@ -3,8 +3,10 @@
 ICON=/usr/share/icons/hicolor/64x64/apps/spotify-client.png
 
 function notify() {
-    NOW_PLAYING=`spotify-cli now-playing`
-    notify-send -i $ICON "${NOW_PLAYING}"
+    eval `spotify-cli now-playing`
+    notify-send -i $ICON \
+        "$spotify_artist_name" \
+        "$spotify_track_name"
 }
 
 function next() {
