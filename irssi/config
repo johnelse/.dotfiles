@@ -221,5 +221,6 @@ settings = {
     tmux_away_active = "yes";
     tmux_away_nick = "johnel_away";
   };
+  "irc/core" = { alternate_nick = "johnelse_"; };
 };
 logs = { };
