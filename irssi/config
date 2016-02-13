@@ -20,13 +20,6 @@ channels = (
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
   },
   {
-    name = "##bass";
-    chatnet = "freenode";
-    autojoin = "yes";
-    activity_msg_level = "PUBLIC";
-    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
-  },
-  {
     name = "#music-theory";
     chatnet = "freenode";
     autojoin = "yes";
@@ -35,13 +28,6 @@ channels = (
   },
   {
     name = "#ocaml";
-    chatnet = "freenode";
-    autojoin = "yes";
-    activity_msg_level = "PUBLIC";
-    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
-  },
-  {
-    name = "#ring3";
     chatnet = "freenode";
     autojoin = "yes";
     activity_msg_level = "PUBLIC";
