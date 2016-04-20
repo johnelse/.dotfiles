@@ -2,6 +2,8 @@
 
 # Script to create an index.html containing links to each file in a directory.
 
+IFS=$(echo -en "\n\b")
+
 if [ -a index.html ]
 then
     echo "index.html already exists"
