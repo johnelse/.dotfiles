@@ -7,17 +7,20 @@ tmux new-window -t xapi:1 -n 'irc'
 tmux new-window -t xapi:2 -n 'build'
 tmux new-window -t xapi:3 -n 'xapi'
 tmux new-window -t xapi:4 -n 'xapi-git'
-tmux new-window -t xapi:5 -n 'libs'
-tmux new-window -t xapi:6 -n 'libs-git'
-tmux new-window -t xapi:7 -n 'xen'
-tmux new-window -t xapi:8 -n 'xen'
+tmux new-window -t xapi:5 -n 'xenopsd'
+tmux new-window -t xapi:6 -n 'xenopsd'
+tmux new-window -t xapi:7 -n 'idl'
+tmux new-window -t xapi:8 -n 'idl'
 
 tmux send-keys -t xapi:0 'cd Notes; vim todo' C-m
 tmux send-keys -t xapi:1 'irc' C-m
-tmux send-keys -t xapi:1 '/join #ring3' C-m
 tmux send-keys -t xapi:2 'cd $RING3; make api-chroot' C-m
 tmux send-keys -t xapi:3 'cd $RING3_API' C-m
 tmux send-keys -t xapi:4 'cd $RING3_API' C-m
+tmux send-keys -t xapi:5 'cd $RING3/myrepos/xenopsd' C-m
+tmux send-keys -t xapi:6 'cd $RING3/myrepos/xenopsd' C-m
+tmux send-keys -t xapi:7 'cd $RING3/myrepos/xcp-idl' C-m
+tmux send-keys -t xapi:8 'cd $RING3/myrepos/xcp-idl' C-m
 
 tmux select-window -t xapi:0
 tmux -2 attach-session -t xapi
