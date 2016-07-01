@@ -10,9 +10,7 @@ then
     exit 1
 fi
 
-ITEMS=`ls --color=none`
-
-for ITEM in $ITEMS
+for ITEM in `ls --color=none`
 do
     echo "<p><a href=\"$ITEM\">$ITEM</a></p>" >> index.html
 done
