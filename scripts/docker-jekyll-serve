@@ -1,8 +1,12 @@
 #!/bin/sh
 
+set -eux
+
+PORT=${1:-4000}
+
 docker run -i -t --rm \
-    --name jekyll-test \
+    --name jekyll-${PORT} \
     -v $PWD:/srv/jekyll \
-    -p 4000:4000 \
+    -p ${PORT}:4000 \
     jekyll/jekyll \
     bundle exec jekyll serve -w
