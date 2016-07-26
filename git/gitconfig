@@ -1,6 +1,6 @@
 [user]
 	name = John Else
-	email = john.else@citrix.com
+	email = john.else@gmail.com
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global
