@@ -40,7 +40,9 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # Add MacPorts binaries to $PATH
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+if [ -d "/opt/local" ] ; then
+    export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+fi
 
 # Set up MacPorts bash completion
 if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
