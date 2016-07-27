@@ -20,10 +20,14 @@ export SVN_EDITOR=/usr/bin/vim
 # Make RokClock work better with xmonad.
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# Set up golang
+export GOPATH=$HOME/Code/gopath
+
 # Path - only add to the path outside tmux.
 if [ -z "$TMUX" ]; then
   PATH=$PATH:~/Scripts/johnel
   PATH=$PATH:/usr/local/installed/opam/bin
+  PATH=$PATH:$GOPATH:$GOPATH/bin
 fi
 
 # if running bash

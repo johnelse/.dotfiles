@@ -3,6 +3,7 @@
 # We want to ensure these directories exist
 DIRS=(
     "$HOME/bin"
+    "$HOME/Code/gopath"
     "$HOME/.xmonad"
 )
 
