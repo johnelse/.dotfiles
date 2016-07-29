@@ -6,6 +6,11 @@ function grj() {
   find . -name *.java | xargs grep -Hn --color=always "$@"
 }
 
+function grpp() {
+  find . -regextype posix-extended -regex ".*\.(cpp|h|hpp|inl)" \
+    | xargs grep -Hn --color=always "$@"
+}
+
 function where() {
   grep -rlI "$@" .
 }
