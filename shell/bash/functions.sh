@@ -1,14 +1,14 @@
 function grml() {
-  find . -regex .*\\.mli? | xargs grep -Hn --color=always "$@"
+  find . -regex .*\\.mli? -print0 | xargs -0 grep -Hn --color=always "$@"
 }
 
 function grj() {
-  find . -name *.java | xargs grep -Hn --color=always "$@"
+  find . -name *.java -print0 | xargs -0 grep -Hn --color=always "$@"
 }
 
 function grpp() {
-  find . -name '*.cpp' -or -name '*.h' -or -name '*.hpp' -or -name '*.inl' \
-    | xargs grep -Hn --color=always "$@"
+  find . \( -name '*.cpp' -or -name '*.h' -or -name '*.hpp' -or -name '*.inl' \) -print0 \
+    | xargs -0 grep -Hn --color=always "$@"
 }
 
 function where() {
