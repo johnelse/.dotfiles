@@ -7,7 +7,7 @@ function grj() {
 }
 
 function grpp() {
-  find . -regextype posix-extended -regex ".*\.(cpp|h|hpp|inl)" \
+  find . -name '*.cpp' -or -name '*.h' -or -name '*.hpp' -or -name '*.inl' \
     | xargs grep -Hn --color=always "$@"
 }
 
