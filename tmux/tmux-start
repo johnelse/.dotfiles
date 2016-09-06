@@ -3,10 +3,14 @@ cd ~
 tmux start-server
 tmux new-session -d -s AZ01 -n 'AZ01'
 
-tmux new-window -t AZ01:1 -n 'ACVS'
+tmux new-window -t AZ01:1 -n 'AZ01'
+tmux new-window -t AZ01:2 -n 'ACVS'
+tmux new-window -t AZ01:3 -n 'ACVS'
 
-tmux send-keys -t AZ01:0 'cd Code/Projects/AZ01' C-m
-tmux send-keys -t AZ01:1 'cd Code/Projects/ACVS/Software' C-m
+tmux send-keys -t AZ01:0 'cd Code/projects/AZ01' C-m
+tmux send-keys -t AZ01:1 'cd Code/projects/AZ01' C-m
+tmux send-keys -t AZ01:2 'cd Code/projects/ACVS/Software' C-m
+tmux send-keys -t AZ01:3 'cd Code/projects/ACVS/Software' C-m
 
 tmux select-window -t AZ01:0
 tmux -2 attach-session -t AZ01
