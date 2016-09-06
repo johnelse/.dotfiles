@@ -58,6 +58,7 @@ myKeys :: [(String, X ())]
 myKeys = [ ("M-p", namedScratchpadAction myScratchPads "terminal")
          , ("M-i", namedScratchpadAction myScratchPads "ipython")
          , ("M-u", namedScratchpadAction myScratchPads "utop")
+         , ("M-S-n", spawn "gnome-do")
          , ("M-S-y", spawn "spotify-cli-wrapper previous")
          , ("M-S-u", spawn "spotify-cli-wrapper play-pause")
          , ("M-S-i", spawn "spotify-cli-wrapper notify")
