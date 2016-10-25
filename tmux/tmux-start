@@ -11,7 +11,7 @@ case `uname -s` in
         tmux new-window -t ACVS:3 -n 'ACVS'
 
         tmux send-keys -t ACVS:0 'irc' C-m
-        tmux send-keys -t ACVS:1 'vim Dropbox/work/notes/inMusic/todo*' C-m
+        tmux send-keys -t ACVS:1 'vim Dropbox/work/notes/inMusic/cheatsheet.txt Dropbox/work/notes/inMusic/todo*' C-m
         tmux send-keys -t ACVS:2 'cd Code/inMusic/Software' C-m
         tmux send-keys -t ACVS:3 'cd Code/inMusic/Software' C-m
 
