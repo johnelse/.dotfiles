@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Script to create an index.html containing links to each file in a directory.
 
