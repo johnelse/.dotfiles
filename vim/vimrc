@@ -12,6 +12,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tmhedberg/matchit'
 NeoBundle 'sbl/scvim'
+NeoBundle 'rust-lang/rust.vim'
 
 " Filetype detection.
 au BufRead,BufNewFile *xensource.log* set filetype=messages
