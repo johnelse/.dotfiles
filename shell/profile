@@ -28,6 +28,7 @@ if [ -z "$TMUX" ]; then
   PATH=$PATH:~/Scripts/johnel
   PATH=$PATH:/usr/local/installed/opam/bin
   PATH=$PATH:$GOPATH:$GOPATH/bin
+  PATH=$PATH:~/node_modules/.bin
 fi
 
 # if running bash
