@@ -15,3 +15,6 @@ fi
 . $HOME/.bash/functions.sh
 
 which opam > /dev/null 2>&1 && eval `opam config env`
+
+# added by travis gem
+[ -f /home/john/.travis/travis.sh ] && source /home/john/.travis/travis.sh
