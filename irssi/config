@@ -14,7 +14,7 @@ servers = (
     use_ssl = "no";
     ssl_verify = "no";
     autoconnect = "no";
-  },
+  }
 );
 
 chatnets = {
@@ -57,7 +57,7 @@ channels = (
     autojoin = "yes";
     activity_msg_level = "PUBLIC";
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
-  },
+  }
 );
 
 aliases = {
