@@ -1,10 +1,13 @@
+# see https://pthree.org/2010/01/31/freenode-ssl-and-sasl-authentication-with-irssi/
+
 servers = (
   {
-    address = "irc.freenode.com";
+    address = "irc.freenode.net";
     chatnet = "FreeNode";
-    port = "6667";
-    use_ssl = "no";
-    ssl_verify = "no";
+    port = "6697";
+    use_ssl = "yes";
+    ssl_verify = "yes";
+    ssl_capath = "/etc/ssl/certs";
     autoconnect = "no";
   },
   {
