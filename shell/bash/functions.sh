@@ -48,3 +48,8 @@ function my_cifs_mount() {
   MOUNTPOINT=$1
   cifs_mount //lonpfs01/johnel$ $MOUNTPOINT
 }
+
+function to_vm() {
+  FILE=$1
+  scp $FILE john@192.168.56.101:/tmp
+}
