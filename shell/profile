@@ -31,6 +31,16 @@ if [ -z "$TMUX" ]; then
   PATH=$PATH:~/node_modules/.bin
 fi
 
+# Add MacPorts binaries to $PATH
+if [ -d "/opt/local" ] ; then
+    export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+fi
+
+# Set up MacPorts bash completion
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+    . /opt/local/etc/profile.d/bash_completion.sh
+fi
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -42,14 +52,4 @@ fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
-fi
-
-# Add MacPorts binaries to $PATH
-if [ -d "/opt/local" ] ; then
-    export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-fi
-
-# Set up MacPorts bash completion
-if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
-    . /opt/local/etc/profile.d/bash_completion.sh
 fi
