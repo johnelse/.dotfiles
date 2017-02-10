@@ -4,7 +4,6 @@
 DIRS=(
     "$HOME/bin"
     "$HOME/Code/gopath"
-    "$HOME/.xmonad"
 )
 
 # Config files within the repository
@@ -26,7 +25,6 @@ FILE_PATHS=(
     "$HOME/.dotfiles/tmux/tmux-start"
     "$HOME/.dotfiles/vim/vimrc"
     "$HOME/.dotfiles/vim/vim"
-    "$HOME/.dotfiles/xmonad/xmonad.hs"
 )
 
 # Paths at which we want to create symlinks to the config files
@@ -48,8 +46,17 @@ LINK_PATHS=(
     "$HOME/bin/tmux-start"
     "$HOME/.vimrc"
     "$HOME/.vim"
-    "$HOME/.xmonad/xmonad.hs"
 )
+
+case `uname -s` in
+    Linux)
+        DIRS+=("$HOME/.xmonad")
+        FILE_PATHS+=("$HOME/.dotfiles/xmonad/xmonad.hs")
+        LINK_PATHS+=("$HOME/.xmonad/xmonad.hs")
+        ;;
+    *)
+        ;;
+esac
 
 function create_dir() {
     DIR_PATH=$1
