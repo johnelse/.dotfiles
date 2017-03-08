@@ -78,3 +78,7 @@ let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 let g:syntastic_ocaml_checkers = ['merlin']
+
+let g:syntastic_cpp_checkers = ['clang++']
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++'
