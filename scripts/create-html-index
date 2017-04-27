@@ -18,10 +18,15 @@ do
     esac
 done
 
-if [ -a index.html -a $FORCE == false ]
+if [ -a index.html ]
 then
-    echo "index.html already exists - use -f to force"
-    exit 1
+    if [ $FORCE == true ]
+    then
+        rm index.html
+    else
+        echo "index.html already exists - use -f to force"
+        exit 1
+    fi
 fi
 
 for ITEM in `ls`
