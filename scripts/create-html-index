@@ -4,9 +4,23 @@
 
 IFS=$(echo -en "\n\b")
 
-if [ -a index.html ]
+FORCE=false
+
+while getopts ":f" opt
+do
+    case $opt in
+        f)
+            FORCE=true
+            ;;
+        \?)
+            echo "Invalid option: -$OPTARG" >&2
+            ;;
+    esac
+done
+
+if [ -a index.html -a $FORCE == false ]
 then
-    echo "index.html already exists"
+    echo "index.html already exists - use -f to force"
     exit 1
 fi
 
