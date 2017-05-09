@@ -1,0 +1,30 @@
+#!/bin/bash
+
+echo $#
+
+if [[ $# -ne 1 ]]
+then
+    echo "usage: $0 <program-name>"
+    exit 1
+fi
+
+PROGRAM_NAME=$1
+
+mkdir $PROGRAM_NAME
+
+cat <<EOF > $PROGRAM_NAME/$PROGRAM_NAME.cpp
+int main(int argc, char **argv)
+{
+    return 0;
+}
+EOF
+
+cat <<EOF > $PROGRAM_NAME/Makefile
+PROGRAM=$PROGRAM_NAME
+
+\$(PROGRAM): \$(PROGRAM).cpp
+	g++ -ggdb -std=c++14 $< -o \$@
+
+clean:
+	rm -f \$(PROGRAM)
+EOF
