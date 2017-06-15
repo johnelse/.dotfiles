@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]
+then
+    echo "usage: $0 <script-name>"
+    exit 1
+fi
+
+SCRIPT_NAME=$1.sh
+
+cat <<EOF > $SCRIPT_NAME
+#!/bin/bash
+EOF
+
+chmod 755 $SCRIPT_NAME
