@@ -40,22 +40,24 @@ alias irc='irssi -c FreeNode'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 
+# OS-specific
 case $(uname -s) in
     Darwin)
         alias ls='ls -G'
         ;;
     Linux)
         alias ls='ls --color=always'
+        # "open <filename>" uses the default application for <filename>
+        alias open='xdg-open'
         ;;
     *)
         ;;
 esac
+
 alias ll='ls -l'
 alias la='ls -a'
 alias less='less -R'
 alias gl='git log --graph --abbrev-commit --pretty=oneline --decorate'
-# "open <filename>" uses the default application for <filename>
-alias open='xdg-open'
 
 alias cp='cp -i'
 alias mv='mv -i'
