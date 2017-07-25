@@ -31,9 +31,10 @@ if [ -z "$TMUX" ]; then
   PATH=$PATH:~/node_modules/.bin
 fi
 
-# Add MacPorts binaries to $PATH
+# Add MacPorts paths if appropriate.
 if [ -d "/opt/local" ] ; then
     export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+    export MANPATH="/opt/local/share/man:$MANPATH"
 fi
 
 # Set up MacPorts bash completion
