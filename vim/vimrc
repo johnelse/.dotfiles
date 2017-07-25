@@ -58,6 +58,9 @@ set listchars=tab:.─,trail:∘,eol:$
 " Search.
 set incsearch
 
+" Set path to current directory and children.
+set path=$PWD/**
+
 " Tab completion.
 set wildmode=longest:full
 set wildmenu
