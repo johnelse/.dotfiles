@@ -12,8 +12,8 @@ case `uname -s` in
 
         tmux send-keys -t ACVS:0 'irc' C-m
         tmux send-keys -t ACVS:1 'vim Dropbox/work/notes/inMusic/cheatsheet.txt Dropbox/work/notes/inMusic/todo*' C-m
-        tmux send-keys -t ACVS:2 'cd Code/inMusic/Software' C-m
-        tmux send-keys -t ACVS:3 'cd Code/inMusic/Software' C-m
+        tmux send-keys -t ACVS:2 'cd Code/inMusic/ACVS/Software' C-m
+        tmux send-keys -t ACVS:3 'cd Code/inMusic/ACVS/Software' C-m
 
         tmux select-window -t ACVS:0
         tmux -2 attach-session -t ACVS
