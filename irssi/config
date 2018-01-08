@@ -48,6 +48,13 @@ channels = (
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
   },
   {
+    name = "#xcp-ng";
+    chatnet = "Freenode";
+    autojoin = "yes";
+    activity_msg_level = "PUBLIC";
+    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
+  },
+  {
     name = "#xen-api";
     chatnet = "Freenode";
     autojoin = "yes";
