@@ -65,3 +65,8 @@ fi
 if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
+
+# set the VST path if the directory exists
+if [ -d "/usr/local/lib/vst" ] ; then
+    VST_PATH="/usr/local/lib/vst:$VST_PATH"
+fi
