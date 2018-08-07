@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DESTINATION=~/Dropbox/backup/watson
+TIMETAG=`date +%Y-%m-%d-%H%M%S`
+
+mkdir -p $DESTINATION
+cd ~/.config
+zip -r $DESTINATION/watson-${TIMETAG}.zip watson
