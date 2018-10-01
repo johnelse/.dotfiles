@@ -245,10 +245,7 @@ settings = {
   };
   "fe-common/core" = { autolog = "yes"; };
   "fe-text" = { actlist_sort = "refnum"; };
-  "perl/core/scripts" = {
-    tmux_away_active = "yes";
-    tmux_away_nick = "johnel_away";
-  };
+  "perl/core/scripts" = { tmux_away_active = "yes"; };
   "irc/core" = { alternate_nick = "johnelse_"; };
 };
 logs = { };
