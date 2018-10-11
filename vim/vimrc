@@ -51,6 +51,7 @@ if exists("&colorcolumn")
     set colorcolumn=81
 endif
 
+set backspace=start
 set cursorline
 set hls
 set list
