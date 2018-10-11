@@ -38,6 +38,11 @@ if [ -d "/opt/local" ] ; then
     export MANPATH="/opt/local/share/man:$MANPATH"
 fi
 
+# Set up homebrew bash completion
+if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
+fi
+
 # Set up MacPorts bash completion
 if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
     . /opt/local/etc/profile.d/bash_completion.sh
