@@ -61,6 +61,15 @@ case `uname -s` in
         DIRS+=("$HOME/.xmonad")
         FILE_PATHS+=("$HOME/.dotfiles/xmonad/xmonad.hs")
         LINK_PATHS+=("$HOME/.xmonad/xmonad.hs")
+
+        DIRS+=("$HOME/.config")
+        FILE_PATHS+=("$HOME/Dropbox/backup/watson/live")
+        LINK_PATHS+=("$HOME/.config/watson")
+        ;;
+    Darwin)
+        DIRS+=("$HOME/Library/Application\ Support/")
+        FILE_PATHS+=("$HOME/Dropbox/backup/watson/live")
+        LINK_PATHS+=("$HOME/Library/Application\ Support/watson")
         ;;
     *)
         ;;
