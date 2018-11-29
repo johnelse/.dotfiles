@@ -1,7 +1,15 @@
 #!/bin/bash
 
-SOURCE=~/.config/watson
-DESTINATION=~/Dropbox/backup/watson
+case `uname -s` in
+    Linux)
+        SOURCE=~/.config/watson
+        ;;
+    Darwin)
+        Source="~/Library/Application Support/watson"
+        ;;
+esac
+
+DESTINATION=~/Dropbox/backup/watson/archive
 TIMETAG=`date +%Y-%m-%d-%H%M%S`
 
 mkdir -p $DESTINATION
