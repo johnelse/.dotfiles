@@ -53,3 +53,8 @@ function to_vm() {
   FILE=$1
   scp $FILE john@192.168.56.101:/tmp
 }
+
+# Useful when tmux isn't in a common $PATH
+function sshtmux() {
+    ssh $1 -t 'exec bash -l -c "tmux attach"'
+}
