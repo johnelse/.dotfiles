@@ -4,16 +4,14 @@ tmux start-server
 
 case `uname -s` in
     Darwin)
-        tmux new-session -d -s ACVS -n 'irssi'
+        tmux new-session -d -s ACVS -n 'todo'
 
-        tmux new-window -t ACVS:1 -n 'todo'
+        tmux new-window -t ACVS:1 -n 'ACVS'
         tmux new-window -t ACVS:2 -n 'ACVS'
-        tmux new-window -t ACVS:3 -n 'ACVS'
 
-        tmux send-keys -t ACVS:0 'irc' C-m
-        tmux send-keys -t ACVS:1 'vim Dropbox/work/notes/inMusic/cheatsheet.txt Dropbox/work/notes/inMusic/todo*' C-m
+        tmux send-keys -t ACVS:0 'vim Dropbox/work/notes/inMusic/cheatsheet.txt Dropbox/work/notes/inMusic/todo*' C-m
+        tmux send-keys -t ACVS:1 'cd Code/inMusic/ACVS/Software' C-m
         tmux send-keys -t ACVS:2 'cd Code/inMusic/ACVS/Software' C-m
-        tmux send-keys -t ACVS:3 'cd Code/inMusic/ACVS/Software' C-m
 
         tmux select-window -t ACVS:0
         tmux -2 attach-session -t ACVS
