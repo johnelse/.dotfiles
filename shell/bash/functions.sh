@@ -58,3 +58,8 @@ function to_vm() {
 function sshtmux() {
     ssh $1 -t 'exec bash -l -c "tmux attach"'
 }
+
+# inMusic stuff
+function mergeto {
+  git push jelse -o merge_request.create -o merge_request.target=$1
+}
