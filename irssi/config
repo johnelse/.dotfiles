@@ -27,20 +27,6 @@ chatnets = {
 
 channels = (
   {
-    name = "#citrix";
-    chatnet = "Freenode";
-    autojoin = "yes";
-    activity_msg_level = "PUBLIC";
-    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
-  },
-  {
-    name = "#music-theory";
-    chatnet = "Freenode";
-    autojoin = "yes";
-    activity_msg_level = "PUBLIC";
-    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
-  },
-  {
     name = "#ocaml";
     chatnet = "Freenode";
     autojoin = "yes";
@@ -50,20 +36,6 @@ channels = (
   {
     name = "#xcp-ng";
     chatnet = "Freenode";
-    autojoin = "yes";
-    activity_msg_level = "PUBLIC";
-    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
-  },
-  {
-    name = "#xen-api";
-    chatnet = "Freenode";
-    autojoin = "yes";
-    activity_msg_level = "PUBLIC";
-    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
-  },
-  {
-    name = "#test";
-    chatnet = "Local";
     autojoin = "yes";
     activity_msg_level = "PUBLIC";
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
