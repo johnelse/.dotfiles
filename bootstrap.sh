@@ -63,7 +63,7 @@ case `uname -s` in
         LINK_PATHS+=("$HOME/.xmonad/xmonad.hs")
 
         DIRS+=("$HOME/.config")
-        FILE_PATHS+=("$HOME/Dropbox/backup/watson/live")
+        FILE_PATHS+=("$HOME/Sync/default/backup/watson/live")
         LINK_PATHS+=("$HOME/.config/watson")
 
         DIRS+="$HOME/Desktop"
@@ -72,7 +72,7 @@ case `uname -s` in
         ;;
     Darwin)
         DIRS+=("$HOME/Library/Application\ Support/")
-        FILE_PATHS+=("$HOME/Dropbox/backup/watson/live")
+        FILE_PATHS+=("$HOME/Sync/default/backup/watson/live")
         LINK_PATHS+=("$HOME/Library/Application\ Support/watson")
         ;;
     *)

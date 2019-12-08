@@ -9,7 +9,7 @@ case `uname -s` in
         ;;
 esac
 
-DESTINATION=~/Dropbox/backup/watson/archive
+DESTINATION=~/Sync/default/backup/watson/archive
 TIMETAG=`date +%Y-%m-%d-%H%M%S`
 
 mkdir -p $DESTINATION

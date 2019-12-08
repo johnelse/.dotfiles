@@ -63,4 +63,4 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-alias todo='vim ~/Dropbox/todo/data/todo.txt'
+alias todo='vim ~/Sync/mobile/todo/data/todo.txt'
