@@ -9,7 +9,7 @@ fi
 SCRIPT_NAME=$1.py
 
 cat <<EOF > $SCRIPT_NAME
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 def main():
     pass
