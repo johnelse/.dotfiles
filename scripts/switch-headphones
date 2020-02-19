@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# https://askubuntu.com/a/1134144
+
+# I also have this problem with my slightly newer XPS 13 (9370), though in my
+# case the issue is related to switching between laptop speakers and headphone
+# output. For some reason the amplifier for the headphones doesn't always get
+# turned on when a jack is connected. To fix this I have to forcibly enable the
+# amplifier.
+
+# To figure out what to do I compared the output of cat
+# /proc/asound/card0/codec#0 when it was working vs non-working, and noticed a
+# difference in the Stereo Amp-Out / HP Out at Ext Right section:
+
+#   Node 0x21 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+#    Control: name="Headphone Playback Switch", index=0, device=0
+#      ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+#    Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+#    Amp-Out vals:  [0x00 0x00]
+#    Pincap 0x0001001c: OUT HP EAPD Detect
+#    EAPD 0x2: EAPD
+#    Pin Default 0x04211020: [Jack] HP Out at Ext Right
+#      Conn = 1/8, Color = Black
+#      DefAssociation = 0x2, Sequence = 0x0
+#    Pin-ctls: 0xc0: OUT HP
+
+# The last value, Pin-ctls, is 0xc0 when the headphone jack is working, and
+# 0x00 when it's not. So, when the output isn't working, I flip that bit:
+
+#   sudo hda-verb /dev/snd/hwC0D0 0x21 SET_PIN_WIDGET_CONTROL 0xc0
+
+# The values may be different depending on the exact sound card, but this method
+# may work for other people.
+
+if [ "$#" -ne 1 ]
+then
+    echo "1 argument expected"
+    exit 1
+fi
+
+case $1 in
+    on)
+        sudo hda-verb /dev/snd/hwC0D0 0x21 SET_PIN_WIDGET_CONTROL 0xc0
+        ;;
+    off)
+        sudo hda-verb /dev/snd/hwC0D0 0x21 SET_PIN_WIDGET_CONTROL 0x00
+        ;;
+esac

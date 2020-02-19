@@ -69,6 +69,10 @@ case `uname -s` in
         DIRS+="$HOME/Desktop"
         FILE_PATHS+=("$HOME/.dotfiles/scripts/start-xmonad")
         LINK_PATHS+=("$HOME/Desktop/start-xmonad")
+
+        DIRS+="$HOME/bin"
+        FILE_PATHS+=("$HOME/.dotfiles/scripts/switch-headphones")
+        LINK_PATHS+=("$HOME/bin/switch-headphones")
         ;;
     Darwin)
         DIRS+=("$HOME/Library/Application\ Support/")
