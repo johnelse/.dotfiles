@@ -11,7 +11,7 @@ import qualified XMonad.StackSet as W
 
 myTerminal = "xfce4-terminal --hide-menubar"
 myScratchPadTerminal = "urxvt +sb -bg Black -fg Gray -name xm-scratchpad"
-myScratchPadIPython = "urxvt +sb -bg Black -fg Gray -name xm-ipython -e ipython"
+myScratchPadIPython = "urxvt +sb -bg Black -fg Gray -name xm-ipython -e ipython3"
 myScratchPadUtop = "urxvt +sb -bg Black -fg Gray -name xm-utop -e utop"
 
 myScratchPads :: [NamedScratchpad]
