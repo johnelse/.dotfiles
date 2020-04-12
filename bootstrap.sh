@@ -75,9 +75,9 @@ case `uname -s` in
         LINK_PATHS+=("$HOME/bin/switch-headphones")
         ;;
     Darwin)
-        DIRS+=("$HOME/Library/Application\ Support/")
+        DIRS+=("$HOME/Library/Application Support/")
         FILE_PATHS+=("$HOME/Sync/default/backup/watson/live")
-        LINK_PATHS+=("$HOME/Library/Application\ Support/watson")
+        LINK_PATHS+=("$HOME/Library/Application Support/watson")
         ;;
     *)
         ;;
@@ -103,9 +103,9 @@ function create_link() {
     LINK_PATH=$2
 
     # Remove other files (-h => only if they're symlinks already => a bit safer)
-    [ -h $LINK_PATH ] && rm -v $LINK_PATH
+    [ -h "$LINK_PATH" ] && rm -v "$LINK_PATH"
     # Create a symlink to the file
-    ln -sv $FILE_PATH $LINK_PATH
+    ln -sv "$FILE_PATH" "$LINK_PATH"
 }
 
 if [ "$PWD" != "$HOME/.dotfiles" ]; then
@@ -115,12 +115,12 @@ else
     # Create any directories which don't exist.
     for DIR in ${DIRS[@]}; do
         echo $DIR
-        create_dir $DIR
+        create_dir "$DIR"
     done
 
     # Create the symlinks - assumes both arrays are the same length!
     for ((i = 0; i < ${#FILE_PATHS[@]}; i++)); do
-        create_link ${FILE_PATHS[$i]} ${LINK_PATHS[$i]}
+        create_link "${FILE_PATHS[$i]}" "${LINK_PATHS[$i]}"
     done
 
     # Let's sort out all the vim submodules
