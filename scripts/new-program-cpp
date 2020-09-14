@@ -21,7 +21,7 @@ cat <<EOF > $PROGRAM_NAME/Makefile
 PROGRAM=$PROGRAM_NAME
 
 \$(PROGRAM): \$(PROGRAM).cpp
-	g++ -ggdb -std=c++14 $< -o \$@
+	g++ -ggdb -std=c++17 $< -o \$@
 
 clean:
 	rm -f \$(PROGRAM)
