@@ -42,7 +42,7 @@ au FileType sh setl sw=4 sts=4 ts=4 expandtab
 au FileType svg setl sw=4 sts=4 ts=4 expandtab
 au FileType vim setl sw=4 sts=4 ts=4 expandtab
 au FileType xml setl sw=2 sts=2 ts=2 expandtab
-au FileType yaml setl sw=4 sts=4 ts=4 expandtab
+au FileType yaml setl sw=2 sts=2 ts=2 expandtab
 
 " Visual settings.
 colorscheme desert
