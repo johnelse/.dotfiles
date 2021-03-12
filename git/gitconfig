@@ -8,6 +8,8 @@
 	ui = true
 [alias]
 	myclone = !sh -c 'git clone "git://github.com/xapi-project/$1" && cd "$1" && git remote rename origin xapi-project && git remote add johnelse "git@github.com:johnelse/$1"' -
+[merge]
+	conflictstyle = diff3
 [svn]
 	rmdir = true
 [filter "lfs"]
