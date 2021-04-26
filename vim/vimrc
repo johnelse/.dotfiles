@@ -6,6 +6,7 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
+NeoBundle 'kana/vim-altr'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'sbl/scvim'
