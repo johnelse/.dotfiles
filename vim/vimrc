@@ -60,7 +60,6 @@ set cursorline
 set hls
 set list
 set listchars=tab:.─,trail:∘,eol:$
-"set listchars=tab:┼─,trail:∘
 set showcmd
 
 " Search.
