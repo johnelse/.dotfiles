@@ -83,6 +83,10 @@ nnoremap <C-l> :NERDTreeFind<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.swp$', '\.a$', '\.cmxa$', '\.o$', '\.spit$', '\.spot$', '\.cmi$', '\.cmx$', '\.annot$']
 
+" vim-altr
+nmap <leader>n <Plug>(altr-forward)
+nmap <leader>p <Plug>(altr-back)
+
 " Enable Merlin
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
