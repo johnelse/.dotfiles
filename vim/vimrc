@@ -61,6 +61,7 @@ set hls
 set list
 set listchars=tab:.─,trail:∘,eol:$
 set showcmd
+set tags=tags;
 
 " Search.
 set incsearch
