@@ -63,3 +63,7 @@ function sshtmux() {
 function mergeto {
   git push jelse -o merge_request.create -o merge_request.target=$1
 }
+
+function acvs() {
+  cd ~/issues/ACVS-${1}
+}
