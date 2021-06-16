@@ -35,7 +35,7 @@ alias ocamlthread='rlwrap -cr ocamlthread -I +threads'
 
 # assorted shortcuts
 alias api="~/Code/utils/xenapi-helpers/run"
-alias irc='irssi -c FreeNode'
+alias irc='irssi -c Libera'
 
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'

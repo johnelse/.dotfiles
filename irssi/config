@@ -2,8 +2,8 @@
 
 servers = (
   {
-    address = "irc.freenode.net";
-    chatnet = "FreeNode";
+    address = "irc.libera.chat";
+    chatnet = "Libera";
     port = "6697";
     use_ssl = "yes";
     ssl_verify = "yes";
@@ -21,21 +21,21 @@ servers = (
 );
 
 chatnets = {
-  FreeNode = { type = "IRC"; nick = "johnelse"; };
+  Libera = { type = "IRC"; nick = "johnelse"; };
   Local = { type = "IRC"; nick = "johnelse"; };
 };
 
 channels = (
   {
     name = "#ocaml";
-    chatnet = "Freenode";
+    chatnet = "Libera";
     autojoin = "yes";
     activity_msg_level = "PUBLIC";
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
   },
   {
     name = "#xcp-ng";
-    chatnet = "Freenode";
+    chatnet = "Libera";
     autojoin = "yes";
     activity_msg_level = "PUBLIC";
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
