@@ -31,6 +31,7 @@ au FileType css setl sw=4 sts=4 ts=4 expandtab
 au FileType cucumber setl sw=4 sts=4 ts=4 expandtab
 au FileType dockerfile setl sw=4 sts=4 ts=4 expandtab
 au FileType erlang setl sw=4 sts=4 ts=4 expandtab
+au FileType groovy setl sw=4 sts=4 ts=4 expandtab
 au FileType haskell setl sw=4 sts=4 ts=4 expandtab
 au FileType html setl sw=4 sts=4 ts=4 expandtab
 au FileType javascript setl sw=4 sts=4 ts=4 tw=0 wrapmargin=0 expandtab
