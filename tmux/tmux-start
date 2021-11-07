@@ -41,10 +41,10 @@ case `uname -s` in
         tmux new-window -t AZ01:2 -n 'ACVS'
         tmux new-window -t AZ01:3 -n 'ACVS'
 
-        tmux send-keys -t AZ01:0 'cd Code/projects/AZ01' C-m
-        tmux send-keys -t AZ01:1 'cd Code/projects/AZ01' C-m
-        tmux send-keys -t AZ01:2 'cd Code/projects/ACVS/Software' C-m
-        tmux send-keys -t AZ01:3 'cd Code/projects/ACVS/Software' C-m
+        tmux send-keys -t AZ01:0 'cd Code/inMusic/AZ01' C-m
+        tmux send-keys -t AZ01:1 'cd Code/inMusic/AZ01' C-m
+        tmux send-keys -t AZ01:2 'cd Code/inMusic/ACVS/Software' C-m
+        tmux send-keys -t AZ01:3 'cd Code/inMusic/ACVS/Software' C-m
 
         tmux select-window -t AZ01:0
         tmux -2 attach-session -t AZ01
