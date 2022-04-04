@@ -23,7 +23,7 @@ function cdi() {
 
 # Laziness.
 function ctime() {
-  python -c "import time; print time.ctime(${1})"
+  python3 -c "import time; print(time.ctime(${1}))"
 }
 
 function md5each() {
