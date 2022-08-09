@@ -7,7 +7,7 @@ function grj() {
 }
 
 function grpp() {
-  find . \( -name '*.cpp' -or -name '*.h' -or -name '*.hpp' -or -name '*.inl' \) -print0 \
+  find . \( -name '*.c' -or -name '*.cpp' -or -name '*.h' -or -name '*.hpp' -or -name '*.inl' \) -print0 \
     | xargs -0 grep -Hn --color=always "$@"
 }
 
