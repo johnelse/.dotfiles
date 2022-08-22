@@ -47,7 +47,7 @@ au FileType xml setl sw=2 sts=2 ts=2 expandtab
 au FileType yaml setl sw=2 sts=2 ts=2 expandtab
 
 " Visual settings.
-colorscheme desert
+colorscheme evening
 
 set statusline=%t%m%r%h%w\ \ \ [BUF=%02n]\ \ \ [TYPE=%Y]\ \ \ [POS=%03l,%03c(%03v)][%03p%%]\ \ \ [LEN=%L]
 set laststatus=2
