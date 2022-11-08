@@ -1,4 +1,23 @@
 #!/bin/sh
+
+function start_az01_session() {
+    CODE_ROOT="$1"
+    BRANCH="$2"
+
+    SESSION_NAME="AZ01_${BRANCH//\./_}"
+
+    tmux new-session -d -s "$SESSION_NAME" -n 'AZ01'
+
+    tmux new-window -t "$SESSION_NAME":1 -n 'AZ01'
+    tmux new-window -t "$SESSION_NAME":2 -n 'ACVS'
+    tmux new-window -t "$SESSION_NAME":3 -n 'ACVS'
+
+    tmux send-keys -t "$SESSION_NAME":0 "cd $CODE_ROOT/AZ01-$BRANCH" C-m
+    tmux send-keys -t "$SESSION_NAME":1 "cd $CODE_ROOT/AZ01-$BRANCH" C-m
+    tmux send-keys -t "$SESSION_NAME":2 "cd $CODE_ROOT/ACVS-$BRANCH/Software/Source" C-m
+    tmux send-keys -t "$SESSION_NAME":3 "cd $CODE_ROOT/ACVS-$BRANCH/Software/Source" C-m
+}
+
 cd ~
 tmux start-server
 
@@ -35,18 +54,19 @@ case `uname -s` in
         tmux -2 attach-session -t ACVS-mpc2
         ;;
     Linux)
-        tmux new-session -d -s AZ01 -n 'AZ01'
+        CODE_ROOT="/media/john/transcend1/Code/inmusic"
+        if [ ! -d "$CODE_ROOT" ]
+        then
+            echo "Drive not attached"
+            exit 1
+        fi
 
-        tmux new-window -t AZ01:1 -n 'AZ01'
-        tmux new-window -t AZ01:2 -n 'ACVS'
-        tmux new-window -t AZ01:3 -n 'ACVS'
+        start_az01_session "$CODE_ROOT" mpc2
+        start_az01_session "$CODE_ROOT" main
+        start_az01_session "$CODE_ROOT" 2.11
+        start_az01_session "$CODE_ROOT" 3.2
 
-        tmux send-keys -t AZ01:0 'cd Code/inMusic/AZ01' C-m
-        tmux send-keys -t AZ01:1 'cd Code/inMusic/AZ01' C-m
-        tmux send-keys -t AZ01:2 'cd Code/inMusic/ACVS/Software' C-m
-        tmux send-keys -t AZ01:3 'cd Code/inMusic/ACVS/Software' C-m
-
-        tmux select-window -t AZ01:0
-        tmux -2 attach-session -t AZ01
+        tmux select-window -t AZ01_mpc2:0
+        tmux -2 attach-session -t AZ01_mpc2
         ;;
 esac
