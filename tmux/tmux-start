@@ -54,7 +54,15 @@ case `uname -s` in
         tmux -2 attach-session -t ACVS-mpc2
         ;;
     Linux)
-        CODE_ROOT="/media/john/transcend1/Code/inmusic"
+        case `hostname` in
+            dylan)
+                CODE_ROOT="/media/john/transcend1/Code/inmusic"
+                ;;
+            ermintrude)
+                CODE_ROOT="/volumes/data1/Code/inmusic"
+                ;;
+        esac
+
         if [ ! -d "$CODE_ROOT" ]
         then
             echo "Drive not attached"
