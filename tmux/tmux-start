@@ -59,7 +59,7 @@ case `uname -s` in
                 CODE_ROOT="/media/john/transcend1/Code/inmusic"
                 ;;
             ermintrude)
-                CODE_ROOT="/volumes/data1/Code/inmusic"
+                CODE_ROOT="/volumes/data1/Code/inMusic"
                 ;;
         esac
 
