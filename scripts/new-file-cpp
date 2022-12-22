@@ -1,0 +1,17 @@
+#!/bin/bash
+
+FILEPATH=$1
+[ -z "$FILEPATH" ]     && echo "error: \$FILEPATH is empty"   && return 1
+[ -e "$FILEPATH.cpp" ] && echo "error: \$FILEPATH.cpp exists" && return 1
+
+FILENAME=$(basename $1)
+YEAR=$(date +%Y)
+
+cat << EOF > "${FILEPATH}.cpp"
+//==============================================================================
+// ${FILENAME}.cpp
+// Copyright ${YEAR} inMusic Brands. All rights reserved.
+//==============================================================================
+
+#include "${FILEPATH}.h"
+EOF
