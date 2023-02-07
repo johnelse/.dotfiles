@@ -69,12 +69,13 @@ case `uname -s` in
             exit 1
         fi
 
-        start_az01_session "$CODE_ROOT" mpc2
-        start_az01_session "$CODE_ROOT" main
+        start_az01_session "$CODE_ROOT" sme0-mpc2
+        start_az01_session "$CODE_ROOT" sme0-main
+        start_az01_session "$CODE_ROOT" sme1-main
         start_az01_session "$CODE_ROOT" 2.11
         start_az01_session "$CODE_ROOT" 3.2
 
-        tmux select-window -t AZ01_mpc2:0
-        tmux -2 attach-session -t AZ01_mpc2
+        tmux select-window -t AZ01_sme0-mpc2:0
+        tmux -2 attach-session -t AZ01_sme0-mpc2
         ;;
 esac
