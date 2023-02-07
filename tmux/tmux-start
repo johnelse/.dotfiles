@@ -4,7 +4,7 @@ function start_az01_session() {
     CODE_ROOT="$1"
     BRANCH="$2"
 
-    SESSION_NAME="AZ01_${BRANCH//\./_}"
+    SESSION_NAME="AZ01-${BRANCH//\./_}"
 
     tmux new-session -d -s "$SESSION_NAME" -n 'AZ01'
 
@@ -75,7 +75,7 @@ case `uname -s` in
         start_az01_session "$CODE_ROOT" 2.11
         start_az01_session "$CODE_ROOT" 3.2
 
-        tmux select-window -t AZ01_sme0-mpc2:0
-        tmux -2 attach-session -t AZ01_sme0-mpc2
+        tmux select-window -t AZ01-sme0-mpc2:0
+        tmux -2 attach-session -t AZ01-sme0-mpc2
         ;;
 esac
