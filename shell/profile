@@ -71,20 +71,21 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-# include the pip bin directory if it exists
-if [ -d "/opt/local/Library/Frameworks/Python.framework/Versions/3.7/bin" ] ; then
-    PATH="/opt/local/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
-fi
-
 # include the NPM bin directory if it exists
 if [ -d "$HOME/.npm-global/bin" ] ; then
     PATH="$HOME/.npm-global/bin:$PATH"
 fi
 
-# include the directory where pip install --user installs things
 PYTHON_VERSION=$(python -V | cut -d ' ' -f 2 | cut -d '.' -f -2)
 PYTHON_USER_BIN="$HOME/Library/Python/$PYTHON_VERSION/bin"
+PYTHON_SYSTEM_BIN="/opt/local/Library/Frameworks/Python.framework/Versions/$PYTHON_VERSION/bin"
 
+# include the directory where pip install installs things
+if [ -d "$PYTHON_SYSTEM_BIN" ] ; then
+    export PATH="$PYTHON_SYSTEM_BIN:$PATH"
+fi
+
+# include the directory where pip install --user installs things
 if [ -d "$PYTHON_USER_BIN" ] ; then
     export PATH="$PYTHON_USER_BIN:$PATH"
 fi
