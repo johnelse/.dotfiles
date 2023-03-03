@@ -61,6 +61,7 @@ set cursorline
 set hls
 set list
 set listchars=tab:.─,trail:∘,eol:$
+set nofixendofline
 set showcmd
 set tags=tags;
 
