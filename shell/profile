@@ -81,6 +81,14 @@ if [ -d "$HOME/.npm-global/bin" ] ; then
     PATH="$HOME/.npm-global/bin:$PATH"
 fi
 
+# include the directory where pip install --user installs things
+PYTHON_VERSION=$(python -V | cut -d ' ' -f 2 | cut -d '.' -f -2)
+PYTHON_USER_BIN="$HOME/Library/Python/$PYTHON_VERSION/bin"
+
+if [ -d "$PYTHON_USER_BIN" ] ; then
+    export PATH="$PYTHON_USER_BIN:$PATH"
+fi
+
 # set the VST path if the directory exists
 if [ -d "/usr/local/lib/vst" ] ; then
     VST_PATH="/usr/local/lib/vst:$VST_PATH"
