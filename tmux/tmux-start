@@ -2,9 +2,9 @@
 
 function start_az01_session() {
     CODE_ROOT="$1"
-    BRANCH="$2"
+    CODE_DIR="$2"
 
-    SESSION_NAME="AZ01-${BRANCH//\./_}"
+    SESSION_NAME="AZ01-${CODE_DIR//\./_}"
 
     tmux new-session -d -s "$SESSION_NAME" -n 'AZ01'
 
@@ -12,10 +12,10 @@ function start_az01_session() {
     tmux new-window -t "$SESSION_NAME":2 -n 'ACVS'
     tmux new-window -t "$SESSION_NAME":3 -n 'ACVS'
 
-    tmux send-keys -t "$SESSION_NAME":0 "cd $CODE_ROOT/AZ01-$BRANCH" C-m
-    tmux send-keys -t "$SESSION_NAME":1 "cd $CODE_ROOT/AZ01-$BRANCH" C-m
-    tmux send-keys -t "$SESSION_NAME":2 "cd $CODE_ROOT/ACVS-$BRANCH/Software/Source" C-m
-    tmux send-keys -t "$SESSION_NAME":3 "cd $CODE_ROOT/ACVS-$BRANCH/Software/Source" C-m
+    tmux send-keys -t "$SESSION_NAME":0 "cd $CODE_ROOT/$CODE_DIR/AZ01" C-m
+    tmux send-keys -t "$SESSION_NAME":1 "cd $CODE_ROOT/$CODE_DIR/AZ01" C-m
+    tmux send-keys -t "$SESSION_NAME":2 "cd $CODE_ROOT/$CODE_DIR/ACVS/Software/Source" C-m
+    tmux send-keys -t "$SESSION_NAME":3 "cd $CODE_ROOT/$CODE_DIR/ACVS/Software/Source" C-m
 }
 
 cd ~
@@ -69,13 +69,12 @@ case `uname -s` in
             exit 1
         fi
 
-        start_az01_session "$CODE_ROOT" sme0-mpc2
         start_az01_session "$CODE_ROOT" sme0-main
         start_az01_session "$CODE_ROOT" sme1-main
         start_az01_session "$CODE_ROOT" 2.11
         start_az01_session "$CODE_ROOT" 3.2
 
-        tmux select-window -t AZ01-sme0-mpc2:0
-        tmux -2 attach-session -t AZ01-sme0-mpc2
+        tmux select-window -t AZ01-sme0-main:0
+        tmux -2 attach-session -t AZ01-sme0-main
         ;;
 esac
