@@ -69,6 +69,7 @@ case `uname -s` in
             exit 1
         fi
 
+        start_az01_session "$CODE_ROOT" sme0-staging-mpc2
         start_az01_session "$CODE_ROOT" sme0-main
         start_az01_session "$CODE_ROOT" sme1-main
         start_az01_session "$CODE_ROOT" 2.x
