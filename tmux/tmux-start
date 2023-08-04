@@ -23,6 +23,7 @@ tmux start-server
 
 case `uname -s` in
     Darwin)
+        # ACVS-mpc2
         tmux new-session -d -s ACVS-mpc2 -n 'todo'
 
         tmux new-window -t ACVS-mpc2:1 -n 'builds'
@@ -34,6 +35,7 @@ case `uname -s` in
         tmux send-keys -t ACVS-mpc2:2 'cd Code/inMusic/ACVS-mpc2/Software/Source' C-m
         tmux send-keys -t ACVS-mpc2:3 'cd Code/inMusic/ACVS-mpc2/Software/Source' C-m
 
+        # ACVS-main
         tmux new-session -d -s ACVS-main -n 'builds'
 
         tmux new-window -t ACVS-main:1 -n 'ACVS'
@@ -43,6 +45,7 @@ case `uname -s` in
         tmux send-keys -t ACVS-main:1 'cd Code/inMusic/ACVS-main/Software/Source' C-m
         tmux send-keys -t ACVS-main:2 'cd Code/inMusic/ACVS-main/Software/Source' C-m
 
+        # ACVS-release
         tmux new-session -d -s ACVS-release
 
         tmux new-window -t ACVS-release:1
