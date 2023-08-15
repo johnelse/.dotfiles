@@ -48,10 +48,30 @@ case `uname -s` in
         # ACVS-release
         tmux new-session -d -s ACVS-release
 
-        tmux new-window -t ACVS-release:1
+        tmux new-window -t ACVS-release:1 -n 'ACVS'
+        tmux new-window -t ACVS-release:2 -n 'ACVS'
 
-        tmux send-keys -t ACVS-release:0 'cd Code/inMusic/ACVS-release/Software/Source' C-m
+        tmux send-keys -t ACVS-release:0 'cd Code/inMusic/builds/release' C-m
         tmux send-keys -t ACVS-release:1 'cd Code/inMusic/ACVS-release/Software/Source' C-m
+        tmux send-keys -t ACVS-release:2 'cd Code/inMusic/ACVS-release/Software/Source' C-m
+
+        # ACVS-tests
+        tmux new-session -d -s ACVS-tests
+
+        tmux new-window -t ACVS-tests:1
+
+        tmux send-keys -t ACVS-tests:0 'cd Code/inmusic/ACVS-tests' C-m
+        tmux send-keys -t ACVS-tests:1 'cd Code/inmusic/ACVS-tests' C-m
+
+        # az01
+        tmux new-session -d -s az01
+
+        tmux new-window -t az01:1
+        tmux new-window -t az01:2
+
+        tmux send-keys -t az01:0 'cd az01/builds' C-m
+        tmux send-keys -t az01:1 'cd az01/updater-assets-sme0' C-m
+        tmux send-keys -t az01:2 'cd az01/updater-assets-sme1' C-m
 
         tmux select-window -t ACVS-mpc2:0
         tmux -2 attach-session -t ACVS-mpc2
