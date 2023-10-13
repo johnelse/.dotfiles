@@ -98,6 +98,16 @@ case `uname -s` in
         start_az01_session "$CODE_ROOT" 2.x
         start_az01_session "$CODE_ROOT" 3.x
 
+        # desktop
+        tmux new-session -d -s desktop -n "builds"
+
+        tmux new-window -t desktop:1 -n "ACVS"
+        tmux new-window -t desktop:2 -n "ACVS"
+
+        tmux send-keys -t desktop:0 "cd $CODE_ROOT/builds/main" C-m
+        tmux send-keys -t desktop:1 "cd $CODE_ROOT/ACVS-desktop/Software/Source" C-m
+        tmux send-keys -t desktop:2 "cd $CODE_ROOT/ACVS-desktop/Software/Source" C-m
+
         tmux select-window -t AZ01-sme0-main:0
         tmux -2 attach-session -t AZ01-sme0-main
         ;;
