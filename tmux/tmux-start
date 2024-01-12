@@ -108,6 +108,11 @@ case `uname -s` in
         tmux send-keys -t desktop:1 "cd $CODE_ROOT/ACVS-desktop/Software/Source" C-m
         tmux send-keys -t desktop:2 "cd $CODE_ROOT/ACVS-desktop/Software/Source" C-m
 
+        # az04
+        tmux new-session -d -s az04 -n "builds"
+
+        tmux send-keys -t az04:0 "cd $CODE_ROOT/az04" C-m
+
         tmux select-window -t AZ01-sme0-main:0
         tmux -2 attach-session -t AZ01-sme0-main
         ;;
