@@ -68,10 +68,12 @@ case `uname -s` in
 
         tmux new-window -t az01:1
         tmux new-window -t az01:2
+        tmux new-window -t az01:3
 
         tmux send-keys -t az01:0 'cd az01/builds' C-m
         tmux send-keys -t az01:1 'cd az01/updater-assets-sme0' C-m
         tmux send-keys -t az01:2 'cd az01/updater-assets-sme1' C-m
+        tmux send-keys -t az01:3 'cd az01/updater-assets-sme5' C-m
 
         tmux select-window -t ACVS-mpc2:0
         tmux -2 attach-session -t ACVS-mpc2
