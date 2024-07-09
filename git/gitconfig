@@ -7,7 +7,7 @@
 [color]
 	ui = true
 [alias]
-	myclone = !sh -c 'git clone "git://github.com/xapi-project/$1" && cd "$1" && git remote rename origin xapi-project && git remote add johnelse "git@github.com:johnelse/$1"' -
+	mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
 [merge]
 	conflictstyle = diff3
 [svn]
