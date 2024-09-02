@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function start_az01_session() {
+function start_buildroot_session() {
     CODE_ROOT="$1"
     CODE_DIR="$2"
 
@@ -94,12 +94,12 @@ case `uname -s` in
             exit 1
         fi
 
-        start_az01_session "$CODE_ROOT" sme0-staging-mpc2
-        start_az01_session "$CODE_ROOT" 2.x
-        start_az01_session "$CODE_ROOT" 3.x
+        start_buildroot_session "$CODE_ROOT" sme0-staging-mpc2
+        start_buildroot_session "$CODE_ROOT" 2.x
+        start_buildroot_session "$CODE_ROOT" 3.x
 
-        start_az01_session "$CODE_ROOT" sme0-main
-        start_az01_session "$CODE_ROOT" sme1-main
+        start_buildroot_session "$CODE_ROOT" sme0-main
+        start_buildroot_session "$CODE_ROOT" sme1-main
 
         # sme5-main
         tmux new-session -d -s sme5-main -n "builds"
