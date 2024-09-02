@@ -97,16 +97,17 @@ case `uname -s` in
         start_az01_session "$CODE_ROOT" sme0-staging-mpc2
         start_az01_session "$CODE_ROOT" sme0-main
         start_az01_session "$CODE_ROOT" sme1-main
+
+        # sme5-main
+        tmux new-session -d -s sme5-main -n "builds"
+        tmux send-keys -t sme5-main:0 "cd $CODE_ROOT/sme5-main" C-m
+
         start_az01_session "$CODE_ROOT" 2.x
         start_az01_session "$CODE_ROOT" 3.x
 
         # desktop
         tmux new-session -d -s desktop -n "builds"
         tmux send-keys -t desktop:0 "cd $CODE_ROOT/builds/main" C-m
-
-        # az04
-        tmux new-session -d -s az04 -n "builds"
-        tmux send-keys -t az04:0 "cd $CODE_ROOT/az04" C-m
 
         tmux select-window -t AZ01-sme0-main:0
         tmux -2 attach-session -t AZ01-sme0-main
