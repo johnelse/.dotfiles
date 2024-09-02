@@ -101,6 +101,9 @@ case `uname -s` in
         # sme5-main
         tmux new-session -d -s sme5-main -n "builds"
         tmux send-keys -t sme5-main:0 "cd $CODE_ROOT/sme5-main" C-m
+        tmux split-window -h
+        tmux send-keys -t sme5-main:0 "cd $CODE_ROOT/sme5-main" C-m
+        tmux send-keys ". poky/oe-init-build-env build" C-m
 
         start_az01_session "$CODE_ROOT" 2.x
         start_az01_session "$CODE_ROOT" 3.x
