@@ -102,12 +102,10 @@ case `uname -s` in
 
         # desktop
         tmux new-session -d -s desktop -n "builds"
-
         tmux send-keys -t desktop:0 "cd $CODE_ROOT/builds/main" C-m
 
         # az04
         tmux new-session -d -s az04 -n "builds"
-
         tmux send-keys -t az04:0 "cd $CODE_ROOT/az04" C-m
 
         tmux select-window -t AZ01-sme0-main:0
