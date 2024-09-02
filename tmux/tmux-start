@@ -18,6 +18,25 @@ function start_buildroot_session() {
     tmux send-keys -t "$SESSION_NAME":3 "cd $CODE_ROOT/$CODE_DIR/ACVS/Software/Source" C-m
 }
 
+function start_yocto_session() {
+    CODE_ROOT="$1"
+    CODE_DIR="$2"
+
+    SESSION_NAME="yocto-${CODE_DIR//\./_}"
+
+    tmux new-session -d -s "$SESSION_NAME" -n 'yocto'
+    tmux send-keys -t "$SESSION_NAME":0 "cd $CODE_ROOT/$CODE_DIR" C-m
+    tmux split-window -h -t "$SESSION_NAME":0
+    tmux send-keys -t "$SESSION_NAME":0 "cd $CODE_ROOT/$CODE_DIR" C-m
+    tmux send-keys -t "$SESSION_NAME":0 ". poky/oe-init-build-env build" C-m
+
+    tmux new-window -t "$SESSION_NAME":1 -n 'ACVS'
+    tmux new-window -t "$SESSION_NAME":2 -n 'ACVS'
+
+    tmux send-keys -t "$SESSION_NAME":1 "cd $CODE_ROOT/$CODE_DIR/ACVS/Software/Source" C-m
+    tmux send-keys -t "$SESSION_NAME":2 "cd $CODE_ROOT/$CODE_DIR/ACVS/Software/Source" C-m
+}
+
 cd ~
 tmux start-server
 
@@ -101,12 +120,7 @@ case `uname -s` in
         start_buildroot_session "$CODE_ROOT" sme0-main
         start_buildroot_session "$CODE_ROOT" sme1-main
 
-        # sme5-main
-        tmux new-session -d -s sme5-main -n "builds"
-        tmux send-keys -t sme5-main:0 "cd $CODE_ROOT/sme5-main" C-m
-        tmux split-window -h
-        tmux send-keys -t sme5-main:0 "cd $CODE_ROOT/sme5-main" C-m
-        tmux send-keys ". poky/oe-init-build-env build" C-m
+        start_yocto_session "$CODE_ROOT" sme5-main
 
         # desktop
         tmux new-session -d -s desktop -n "builds"
