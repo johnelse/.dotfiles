@@ -117,8 +117,7 @@ case `uname -s` in
         start_buildroot_session "$CODE_ROOT" 2.x
         start_buildroot_session "$CODE_ROOT" 3.x
 
-        start_buildroot_session "$CODE_ROOT" sme0-main
-
+        start_yocto_session "$CODE_ROOT" sme0-main
         start_yocto_session "$CODE_ROOT" sme1-main
         start_yocto_session "$CODE_ROOT" sme5-main
 
@@ -126,7 +125,7 @@ case `uname -s` in
         tmux new-session -d -s desktop -n "builds"
         tmux send-keys -t desktop:0 "cd $CODE_ROOT/builds/main" C-m
 
-        tmux select-window -t AZ01-sme0-main:0
-        tmux -2 attach-session -t AZ01-sme0-main
+        tmux select-window -t yocto-sme0-main:0
+        tmux -2 attach-session -t yocto-sme0-main
         ;;
 esac
