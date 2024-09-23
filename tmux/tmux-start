@@ -29,6 +29,8 @@ function start_yocto_session() {
     tmux split-window -h -t "$SESSION_NAME":0
     tmux send-keys -t "$SESSION_NAME":0 "cd $CODE_ROOT/$CODE_DIR" C-m
     tmux send-keys -t "$SESSION_NAME":0 ". poky/oe-init-build-env build" C-m
+    tmux split-window -v -t "$SESSION_NAME":0
+    tmux send-keys -t "$SESSION_NAME":0 "cd $CODE_ROOT/$CODE_DIR/meta-imb" C-m
 
     tmux new-window -t "$SESSION_NAME":1 -n 'ACVS'
     tmux new-window -t "$SESSION_NAME":2 -n 'ACVS'
