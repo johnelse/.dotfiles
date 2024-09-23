@@ -120,6 +120,7 @@ case `uname -s` in
         start_yocto_session "$CODE_ROOT" sme0-main
         start_yocto_session "$CODE_ROOT" sme1-main
         start_yocto_session "$CODE_ROOT" sme5-main
+        start_yocto_session "$CODE_ROOT" sme5-mpc3-factory
 
         # desktop
         tmux new-session -d -s desktop -n "builds"
