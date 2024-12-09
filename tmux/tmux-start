@@ -117,7 +117,6 @@ case `uname -s` in
 
         start_buildroot_session "$CODE_ROOT" sme0-staging-mpc2
         start_buildroot_session "$CODE_ROOT" 2.x
-        start_buildroot_session "$CODE_ROOT" 3.x
 
         start_yocto_session "$CODE_ROOT" sme0-main
         start_yocto_session "$CODE_ROOT" sme1-main
