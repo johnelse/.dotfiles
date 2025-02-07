@@ -101,11 +101,11 @@ case `uname -s` in
         ;;
     Linux)
         case `hostname` in
-            dylan)
-                CODE_ROOT="/media/john/transcend1/Code/inmusic"
-                ;;
             ermintrude)
                 CODE_ROOT="/volumes/data1/Code/inMusic"
+                ;;
+            flappy)
+                CODE_ROOT="/home/john/Code/inMusic/smex"
                 ;;
         esac
 
