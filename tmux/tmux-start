@@ -22,7 +22,7 @@ function start_yocto_session() {
     CODE_ROOT="$1"
     CODE_DIR="$2"
 
-    SESSION_NAME="yocto-${CODE_DIR//\./_}"
+    SESSION_NAME="yocto-${CODE_DIR##*/}"
 
     tmux new-session -d -s "$SESSION_NAME" -n 'yocto'
     tmux send-keys -t "$SESSION_NAME":0 "cd $CODE_ROOT/$CODE_DIR" C-m
@@ -120,22 +120,26 @@ case `uname -s` in
                 start_buildroot_session "$CODE_ROOT" sme0-staging-mpc2
                 start_buildroot_session "$CODE_ROOT" 2.x
 
-                start_yocto_session "$CODE_ROOT" sme0-main
-                start_yocto_session "$CODE_ROOT" sme1-main
-                start_yocto_session "$CODE_ROOT" sme5-main
-                start_yocto_session "$CODE_ROOT" sme5-mpc3-factory
+                start_yocto_session "$CODE_ROOT" yocto/sme0-main-1
+                start_yocto_session "$CODE_ROOT" yocto/sme1-main-1
+                start_yocto_session "$CODE_ROOT" yocto/sme5-main-1
+                start_yocto_session "$CODE_ROOT" yocto/sme5-main-2
+                start_yocto_session "$CODE_ROOT" yocto/sme5-release-1
 
                 # desktop
                 tmux new-session -d -s desktop -n "builds"
                 tmux send-keys -t desktop:0 "cd $CODE_ROOT/builds/main" C-m
+
+                tmux select-window -t yocto-sme0-main-1:0
+                tmux -2 attach-session -t yocto-sme0-main-1
                 ;;
             flappy)
                 start_yocto_session "$CODE_ROOT" sme0-main
                 start_yocto_session "$CODE_ROOT" sme5-main
+
+                tmux select-window -t yocto-sme0-main:0
+                tmux -2 attach-session -t yocto-sme0-main
                 ;;
         esac
-
-        tmux select-window -t yocto-sme0-main:0
-        tmux -2 attach-session -t yocto-sme0-main
         ;;
 esac
