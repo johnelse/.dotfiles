@@ -121,6 +121,7 @@ case `uname -s` in
                 start_buildroot_session "$CODE_ROOT" 2.x
 
                 start_yocto_session "$CODE_ROOT" yocto/sme0-main-1
+                start_yocto_session "$CODE_ROOT" yocto/sme0-release-1
                 start_yocto_session "$CODE_ROOT" yocto/sme1-main-1
                 start_yocto_session "$CODE_ROOT" yocto/sme5-main-1
                 start_yocto_session "$CODE_ROOT" yocto/sme5-main-2
