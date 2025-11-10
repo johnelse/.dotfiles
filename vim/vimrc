@@ -81,6 +81,16 @@ map Q @q
 " Edit .vimrc easily.
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
+" autocmds for handling .xpj files
+if !exists("xpj_autocommands_loaded")
+    let xpj_autocommands_loaded = 1
+    autocmd BufReadPre,FileReadPre     *.xpj setlocal bin
+    autocmd BufReadPost,FileReadPost   *.xpj call gzip#read("gzip -S.xpj -dn")
+    autocmd BufWritePost,FileWritePost *.xpj call gzip#write("gzip -S.xpj")
+    autocmd FileAppendPre              *.xpj call gzip#appre("gzip -S.xpj -dn")
+    autocmd FileAppendPost             *.xpj call gzip#write("gzip -S.xpj")
+endif
+
 " NERDTree bits.
 nnoremap <C-l> :NERDTreeFind<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
