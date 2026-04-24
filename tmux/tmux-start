@@ -95,6 +95,7 @@ case `uname -s` in
         tmux send-keys -t az01:1 'cd az01/updater-assets-sme0' C-m
         tmux send-keys -t az01:2 'cd az01/updater-assets-sme1' C-m
         tmux send-keys -t az01:3 'cd az01/updater-assets-sme5' C-m
+        tmux send-keys -t az01:4 'cd az01/updater-assets-sme8' C-m
 
         tmux select-window -t ACVS-mpc2:0
         tmux -2 attach-session -t ACVS-mpc2
