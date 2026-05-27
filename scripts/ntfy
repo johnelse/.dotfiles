@@ -1,3 +1,12 @@
 #!/bin/bash
 
-curl -s -d "$(hostname) - done at $(date +'%H:%M')" 192.168.1.60/compile > /dev/null
+set -eu
+
+if $*
+then
+    RESULT="succeeded"
+else
+    RESULT="failed"
+fi
+
+curl -s -d "$(hostname) - $(date +'%H:%M') - ${RESULT}" 192.168.1.60/compile > /dev/null
