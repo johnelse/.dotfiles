@@ -90,13 +90,11 @@ case `uname -s` in
         tmux new-window -t az01:1
         tmux new-window -t az01:2
         tmux new-window -t az01:3
-        tmux new-window -t az01:4
 
         tmux send-keys -t az01:0 'cd az01/builds' C-m
         tmux send-keys -t az01:1 'cd az01/updater-assets-sme0' C-m
         tmux send-keys -t az01:2 'cd az01/updater-assets-sme1' C-m
         tmux send-keys -t az01:3 'cd az01/updater-assets-sme5' C-m
-        tmux send-keys -t az01:4 'cd az01/updater-assets-sme8' C-m
 
         tmux select-window -t ACVS-mpc2:0
         tmux -2 attach-session -t ACVS-mpc2
@@ -130,8 +128,6 @@ case `uname -s` in
                 start_yocto_session "$CODE_ROOT" yocto/sme5-main-1
                 start_yocto_session "$CODE_ROOT" yocto/sme5-main-2
                 start_yocto_session "$CODE_ROOT" yocto/sme5-release-1
-                start_yocto_session "$CODE_ROOT" yocto/sme8-main-1
-                start_yocto_session "$CODE_ROOT" yocto/sme8-release-1
 
                 # desktop
                 tmux new-session -d -s desktop -n "builds"
@@ -143,7 +139,6 @@ case `uname -s` in
             flappy)
                 start_yocto_session "$CODE_ROOT" sme0-main
                 start_yocto_session "$CODE_ROOT" sme5-main
-                start_yocto_session "$CODE_ROOT" sme8-main
 
                 tmux select-window -t yocto-sme0-main:0
                 tmux -2 attach-session -t yocto-sme0-main
