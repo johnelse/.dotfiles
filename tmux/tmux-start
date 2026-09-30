@@ -42,7 +42,7 @@ function start_yocto_session() {
 cd ~
 tmux start-server
 
-case `uname -s` in
+case $(uname -s) in
     Darwin)
         # ACVS-mpc2
         tmux new-session -d -s ACVS-mpc2 -n 'todo'
@@ -102,7 +102,7 @@ case `uname -s` in
         tmux -2 attach-session -t ACVS-mpc2
         ;;
     Linux)
-        case `hostname` in
+        case $(hostname) in
             ermintrude)
                 CODE_ROOT="/volumes/data1/Code/inMusic"
                 ;;
@@ -117,7 +117,7 @@ case `uname -s` in
             exit 1
         fi
 
-        case `hostname` in
+        case $(hostname) in
             ermintrude)
                 start_buildroot_session "$CODE_ROOT" sme0-staging-mpc2
                 start_buildroot_session "$CODE_ROOT" 2.x
