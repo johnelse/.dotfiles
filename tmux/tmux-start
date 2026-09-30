@@ -63,8 +63,8 @@ case `uname -s` in
         tmux new-window -t ACVS-main:2 -n 'ACVS'
 
         tmux send-keys -t ACVS-main:0 'cd Code/inMusic/builds/main'               C-m
-        tmux send-keys -t ACVS-main:1 'cd Code/inMusic/ACVS-main/Software/Source' C-m
-        tmux send-keys -t ACVS-main:2 'cd Code/inMusic/ACVS-main/Software/Source' C-m
+        tmux send-keys -t ACVS-main:1 'cd Code/inMusic/ACVS-main/source' C-m
+        tmux send-keys -t ACVS-main:2 'cd Code/inMusic/ACVS-main/source' C-m
 
         # ACVS-release
         tmux new-session -d -s ACVS-release
@@ -73,8 +73,8 @@ case `uname -s` in
         tmux new-window -t ACVS-release:2 -n 'ACVS'
 
         tmux send-keys -t ACVS-release:0 'cd Code/inMusic/builds/release' C-m
-        tmux send-keys -t ACVS-release:1 'cd Code/inMusic/ACVS-release/Software/Source' C-m
-        tmux send-keys -t ACVS-release:2 'cd Code/inMusic/ACVS-release/Software/Source' C-m
+        tmux send-keys -t ACVS-release:1 'cd Code/inMusic/ACVS-release/source' C-m
+        tmux send-keys -t ACVS-release:2 'cd Code/inMusic/ACVS-release/source' C-m
 
         # az01
         tmux new-session -d -s az01
