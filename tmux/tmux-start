@@ -76,14 +76,6 @@ case `uname -s` in
         tmux send-keys -t ACVS-release:1 'cd Code/inMusic/ACVS-release/Software/Source' C-m
         tmux send-keys -t ACVS-release:2 'cd Code/inMusic/ACVS-release/Software/Source' C-m
 
-        # ACVS-tests
-        tmux new-session -d -s ACVS-tests
-
-        tmux new-window -t ACVS-tests:1
-
-        tmux send-keys -t ACVS-tests:0 'cd Code/inmusic/ACVS-tests' C-m
-        tmux send-keys -t ACVS-tests:1 'cd Code/inmusic/ACVS-tests' C-m
-
         # az01
         tmux new-session -d -s az01
 
