@@ -62,7 +62,7 @@ case `uname -s` in
         tmux new-window -t ACVS-main:1 -n 'ACVS'
         tmux new-window -t ACVS-main:2 -n 'ACVS'
 
-        tmux send-keys -t ACVS-main:0 'cd Code/inMusic/builds/main'               C-m
+        tmux send-keys -t ACVS-main:0 'cd Code/inMusic/builds/main' C-m
         tmux send-keys -t ACVS-main:1 'cd Code/inMusic/ACVS-main/source' C-m
         tmux send-keys -t ACVS-main:2 'cd Code/inMusic/ACVS-main/source' C-m
 
@@ -72,7 +72,7 @@ case `uname -s` in
         tmux new-window -t ACVS-main-2:1 -n 'ACVS'
         tmux new-window -t ACVS-main-2:2 -n 'ACVS'
 
-        tmux send-keys -t ACVS-main-2:0 'cd Code/inMusic/builds/main-2'               C-m
+        tmux send-keys -t ACVS-main-2:0 'cd Code/inMusic/builds/main-2' C-m
         tmux send-keys -t ACVS-main-2:1 'cd Code/inMusic/ACVS-main-2/source' C-m
         tmux send-keys -t ACVS-main-2:2 'cd Code/inMusic/ACVS-main-2/source' C-m
 
