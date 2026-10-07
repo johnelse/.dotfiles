@@ -21,6 +21,7 @@ function start_buildroot_session() {
 function start_yocto_session() {
     CODE_ROOT="$1"
     CODE_DIR="$2"
+    CODE_PATH="$3"
 
     SESSION_NAME="yocto-${CODE_DIR##*/}"
 
@@ -35,8 +36,8 @@ function start_yocto_session() {
     tmux new-window -t "$SESSION_NAME":1 -n 'ACVS'
     tmux new-window -t "$SESSION_NAME":2 -n 'ACVS'
 
-    tmux send-keys -t "$SESSION_NAME":1 "cd $CODE_ROOT/$CODE_DIR/ACVS/Software/Source" C-m
-    tmux send-keys -t "$SESSION_NAME":2 "cd $CODE_ROOT/$CODE_DIR/ACVS/Software/Source" C-m
+    tmux send-keys -t "$SESSION_NAME":1 "cd $CODE_ROOT/$CODE_DIR/ACVS/$CODE_PATH" C-m
+    tmux send-keys -t "$SESSION_NAME":2 "cd $CODE_ROOT/$CODE_DIR/ACVS/$CODE_PATH" C-m
 }
 
 cd ~
@@ -122,14 +123,14 @@ case $(uname -s) in
                 start_buildroot_session "$CODE_ROOT" sme0-staging-mpc2
                 start_buildroot_session "$CODE_ROOT" 2.x
 
-                start_yocto_session "$CODE_ROOT" yocto/sme0-main-1
-                start_yocto_session "$CODE_ROOT" yocto/sme0-main-2
-                start_yocto_session "$CODE_ROOT" yocto/sme0-release-1
-                start_yocto_session "$CODE_ROOT" yocto/sme1-main-1
-                start_yocto_session "$CODE_ROOT" yocto/sme4-main-1
-                start_yocto_session "$CODE_ROOT" yocto/sme5-main-1
-                start_yocto_session "$CODE_ROOT" yocto/sme5-main-2
-                start_yocto_session "$CODE_ROOT" yocto/sme5-release-1
+                start_yocto_session "$CODE_ROOT" yocto/sme0-main-1 "source"
+                start_yocto_session "$CODE_ROOT" yocto/sme0-main-2 "source"
+                start_yocto_session "$CODE_ROOT" yocto/sme0-release-1 "Software/Source"
+                start_yocto_session "$CODE_ROOT" yocto/sme1-main-1 "source"
+                start_yocto_session "$CODE_ROOT" yocto/sme4-main-1 "source"
+                start_yocto_session "$CODE_ROOT" yocto/sme5-main-1 "source"
+                start_yocto_session "$CODE_ROOT" yocto/sme5-main-2 "source"
+                start_yocto_session "$CODE_ROOT" yocto/sme5-release-1 "Software/Source"
 
                 # desktop
                 tmux new-session -d -s desktop -n "builds"
@@ -139,8 +140,8 @@ case $(uname -s) in
                 tmux -2 attach-session -t yocto-sme0-main-1
                 ;;
             flappy)
-                start_yocto_session "$CODE_ROOT" sme0-main
-                start_yocto_session "$CODE_ROOT" sme5-main
+                start_yocto_session "$CODE_ROOT" sme0-main "source"
+                start_yocto_session "$CODE_ROOT" sme5-main "source"
 
                 tmux select-window -t yocto-sme0-main:0
                 tmux -2 attach-session -t yocto-sme0-main
