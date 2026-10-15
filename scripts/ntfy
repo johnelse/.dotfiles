@@ -2,7 +2,7 @@
 
 set -eu
 
-if $*
+if "$@"
 then
     RESULT="succeeded"
 else
